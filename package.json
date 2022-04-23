@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "mercadopago": "^1.5.12",
+    "requirejs": "^2.3.6",
+    "stripe": "^8.213.0"
+  },
+  "name": "tours",
+  "version": "1.0.0",
+  "description": "Esta es una Ecommerce de Tours en Cartagena",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Santiago C Suarez",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^0.26.1"
+  }
+}
