@@ -63,7 +63,7 @@ function readCheckout() {
 function morePerson(idCant) {
     console.log("entro");
     let id = idCant;
-    //let dataCarts = [];
+    let dataCarts = [];
     for (let i = 0; i < acountTotal.length; i++) {
         //acountTotal[i] = JSON.parse(acountTotal[i]);
         //console.log(acountTotal[i]);
@@ -76,12 +76,18 @@ function morePerson(idCant) {
                 //dataCarts.push(JSON.stringify(acountTotal[i][j]));
                 //dataCarts.push(totalCarts[i]);
                 
+            } else if (acountTotal[i][j].id !== id) {
+                acountTotal[i] = acountTotal[i];
+                console.log(acountTotal[i]);
             }
         }
         //dataCarts.push(acountTotal[i]);
+        
     }
+    //dataCarts.push(acountTotal);
+    console.log(dataCarts);
+    console.log(acountTotal);
     localStorage.setItem("Invoices", JSON.stringify(acountTotal));
-    readCheckout();
 }
 
 function lessPerson(idCant) {
@@ -150,7 +156,7 @@ function dele(id) {
         }
         dataTotal.push(JSON.stringify(item));
         for (let i = 0; i < dataTotal.length; i++) {
-            if (dataTotal[i] === "[]") {
+            if (dataTotal[i] === "[]" || dataTotal[i] === null) {
                 dataTotal.splice(i, 1);
             }
         }
