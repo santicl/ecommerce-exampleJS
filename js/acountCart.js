@@ -13,8 +13,6 @@ if (window.location.href === 'http://localhost/paginaTours/tours/shop.html') {
     window.onload = read;
 }
 
-//read.onload = removeCommon;
-
 function read() {
     let show = '';
     fetch('http://localhost/paginaTours/tours/products.json')
@@ -27,9 +25,9 @@ function read() {
                     <img src="img/${data[i].img}" />
                     <div class="container-included">
                       <div id="span">${data[i].include.map(item => {
-                    //console.log(item.pro);
-                    return `<li class="list"><i class="fi fi-br-shield-check"></i> ${item.pro}</li>`
-                })}</div>
+                        //console.log(item.pro);
+                        return `<li class="list"><i class="fi fi-br-shield-check"></i> ${item.pro}</li>`
+                    })}</div>
                     </div>
                     <h4>$ ${data[i].price}</h4>
                     <button id="add" class="button-add">Agregar</button>
@@ -41,26 +39,6 @@ function read() {
             }
         })
 }
-
-
-function removeCommon() {
-    let body = document.getElementById("body");
-    console.log(body.childNodes);
-    let nodes = body.childNodes;
-    for (let i = 0; i < nodes.length; i++) {
-        //console.log(nodes[i].textContent);
-        if (nodes[i].nodeValue == "\n    ") {
-            console.log("si esta");
-            //nodes[i].ownerDocument.hidden = true;
-            console.log(nodes[i].textContent)
-        }
-    }
-    //c = span.innerHTML.replace(",", "");
-    //c = c.replace(",", "");
-    //c = c.replace(",", "");
-    //document.getElementById("span").innerHTML = c;
-}
-
 
 
 
@@ -75,14 +53,11 @@ function add(price, id) {
             console.log(totalCarts[i])
             dataCarts.push(totalCarts[i]);
             dataCarts = JSON.stringify(dataCarts);
-            //console.log(dataCarts + "Es donde se muestra");
         }
     }
 
-    //console.log(d);
     data.push(dataCarts);
     console.log(data);
-    //dataCarts.push(totalCarts[i]);
     if (localStorage.getItem("Invoices") === null) {
         let invoices = [];
         invoices.push(dataCarts);
