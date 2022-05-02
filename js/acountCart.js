@@ -26,15 +26,14 @@ function proof() {
 proof();
 
 function read() {
-    const URL = 'https://api-tours-default-rtdb.firebaseio.com/tours.json';
     let show = '';
     fetch(URL)
         .then(response => response.json())
         .then(data => {
             try {
-                
                 for (let i = 0; i < data.length; i++) {
-                    const {title, img, price, include} = data[i];
+                    console.log("enteo")
+                    const { title, img, price, include } = data[i];
                     show += `<div id="div" class="product-container">
                     <h3>${title}</h3>
                     <img src="img/${img}" />
