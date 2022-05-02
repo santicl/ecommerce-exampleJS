@@ -30,15 +30,15 @@ function readCheckout() {
 
                 //totalSuma.push(invoices[i][j].price);
                 //console.log(totalSuma);
-
+                const  { include } = invoices[i][j];
                 let price = new Intl.NumberFormat('es-ES').format(invoices[i][j].price);
                 document.getElementById("content_product_checkout").innerHTML += `<div class="product-container">
                 <h3>${invoices[i][j].title}</h3>
                 <img src="img/${invoices[i][j].img}" />
                 <div class="container-included">
-                  <span>${invoices[i][j].include.map(item => {
+                  <span>${include.map(item => {
                     //console.log(item.pro);
-                    return `<li class="list"><i class="fi fi-br-shield-check"></i> ${item.pro}</li>`
+                    return `<li class="list"><i class="fi fi-br-shield-check"></i> ${item}</li>`
                 })}</span>
                 </div>
                 <div class="container-person">
