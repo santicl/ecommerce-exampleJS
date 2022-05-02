@@ -13,23 +13,38 @@ if (window.location.href === 'http://localhost/paginaTours/tours/shop.html') {
     window.onload = read;
 }
 
+const URL = 'https://api-tours-default-rtdb.firebaseio.com/tours.json';
+
+function proof() {
+    fetch(URL)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+}
+
+proof();
+
 function read() {
+    const URL = 'https://api-tours-default-rtdb.firebaseio.com/tours.json';
     let show = '';
-    fetch('http://localhost/paginaTours/tours/products.json')
+    fetch(URL)
         .then(response => response.json())
         .then(data => {
             try {
+                
                 for (let i = 0; i < data.length; i++) {
+                    const {title, img, price, include} = data[i];
                     show += `<div id="div" class="product-container">
-                    <h3>${data[i].title}</h3>
-                    <img src="img/${data[i].img}" />
+                    <h3>${title}</h3>
+                    <img src="img/${img}" />
                     <div class="container-included">
-                      <div id="span">${data[i].include.map(item => {
+                      <div id="span">${include.map(item => {
                         //console.log(item.pro);
-                        return `<li class="list"><i class="fi fi-br-shield-check"></i> ${item.pro}</li>`
+                        return `<li class="list"><i class="fi fi-br-shield-check"></i> ${item}</li>`
                     })}</div>
                     </div>
-                    <h4>$ ${data[i].price}</h4>
+                    <h4>$ ${price}</h4>
                     <button id="add" class="button-add">Agregar</button>
                 </div>`
                 }
