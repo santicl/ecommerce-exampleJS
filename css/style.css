@@ -105,6 +105,12 @@ a:focus {
 }
 
 
+.img_mante {
+    width: 35%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 
 /**********************************/
 /*********** Nav Bar CSS **********/
