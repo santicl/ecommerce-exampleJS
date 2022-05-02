@@ -9,7 +9,7 @@ let pro = [];
 
 
 
-if (window.location.href === 'http://localhost/paginaTours/tours/shop.html') {
+if (window.location.href === 'https://toursopen.netlify.app/shop.html') {
     window.onload = read;
 }
 
