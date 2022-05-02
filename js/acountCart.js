@@ -9,13 +9,13 @@ let pro = [];
 
 
 
-if (window.location.href === 'https://santicl.github.io/ecommerce-exampleJS/shop.html') {
+if (window.location.href === 'http://localhost/paginaTours/tours/shop.html') {
     window.onload = read;
 }
 
 function read() {
     let show = '';
-    fetch('https://github.com/santicl/ecommerce-exampleJS/blob/master/products.json')
+    fetch('http://localhost/paginaTours/tours/products.json')
         .then(response => response.json())
         .then(data => {
             try {

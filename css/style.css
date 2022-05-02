@@ -74,6 +74,11 @@ a:focus {
     max-width: 1366px;
 }
 
+.fi-rr-badge:before, .fi-rr-time-twenty-four:before, .fi-rr-time-delete:before, .fi-rr-list-check:before {
+    font-size: 50px;
+    color: #fbaf32;
+}
+
 .back-to-top {
     position: fixed;
     display: none;
@@ -225,6 +230,15 @@ div#sdk h2 {
     position: absolute;
     margin-left: 8px;
     color: #fbaf32;
+}
+
+.content_product_null {
+    width: 100%;
+}
+
+.img_cart {
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 
