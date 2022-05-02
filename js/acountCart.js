@@ -4,36 +4,26 @@ let total = 0;
 var cart;
 let totalCarts = [];
 let pro = [];
-
-
-
-
-
-if (window.location.href === 'https://toursopen.netlify.app/shop.html') {
-    window.onload = read;
-}
-
 const URL = 'https://api-tours-default-rtdb.firebaseio.com/tours.json';
 
-function proof() {
-    fetch(URL)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        })
-}
 
-proof();
+
+
+
+if ((window.location.href === 'http://localhost/paginaTours/tours/shop.html') || (window.location.href === 'https://toursopen.netlify.app/shop.html')) {
+    window.onload = read;
+}
 
 function read() {
     let show = '';
     fetch(URL)
         .then(response => response.json())
         .then(data => {
+            totalCarts = data;
+            console.log(totalCarts)
             try {
                 for (let i = 0; i < data.length; i++) {
-                    console.log("enteo")
-                    const { title, img, price, include } = data[i];
+                    const { title, img, price, include, id } = data[i];
                     show += `<div id="div" class="product-container">
                     <h3>${title}</h3>
                     <img src="img/${img}" />
@@ -44,7 +34,7 @@ function read() {
                     })}</div>
                     </div>
                     <h4>$ ${price}</h4>
-                    <button id="add" class="button-add">Agregar</button>
+                    <button id="add" onclick="add('${id}')" class="button-add">Agregar</button>
                 </div>`
                 }
                 document.getElementById("content_product").innerHTML = show;
@@ -56,14 +46,15 @@ function read() {
 
 
 
-function add(price, id) {
+function add(id) {
     let dataCarts = [];
     let data = [];
-
     cart = id;
-    //console.log(id)
+    console.log(id)
     for (let i = 0; i < totalCarts.length; i++) {
+        console.log(totalCarts[i].id)
         if (totalCarts[i].id == cart) {
+            total = totalCarts[i].price;
             console.log(totalCarts[i])
             dataCarts.push(totalCarts[i]);
             dataCarts = JSON.stringify(dataCarts);

@@ -10,7 +10,7 @@ let totalSuma = [];
 
 
 function readCheckout() {
-    if (window.location.href === 'http://localhost/paginaTours/tours/checkout.html') {
+    if ((window.location.href === 'http://localhost/paginaTours/tours/checkout.html') || (window.location.href === 'https://toursopen.netlify.app/shop.html')) {
         let invoices = JSON.parse(localStorage.getItem("Invoices"));
         //console.log(invoices);
         acountTotal = invoices;
