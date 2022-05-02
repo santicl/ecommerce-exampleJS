@@ -41,11 +41,6 @@ function readCheckout() {
                     return `<li class="list"><i class="fi fi-br-shield-check"></i> ${item}</li>`
                 })}</span>
                 </div>
-                <div class="container-person">
-                     <button onclick="lessPerson('${invoices[i][j].id}')">-</button>
-                     <input id="input_person" type="number" value="${invoices[i][j].count}">
-                     <button onclick="morePerson('${invoices[i][j].id}')" type="button">+</button>
-                </div>
                 <div class="container-data text-center">
                    <input type="date" name="" id="">
                 </div>
