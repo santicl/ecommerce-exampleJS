@@ -15,7 +15,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Santiago C Suarez",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "axios": "^0.26.1"
   }

@@ -54,7 +54,6 @@ function add(id) {
     for (let i = 0; i < totalCarts.length; i++) {
         console.log(totalCarts[i].id)
         if (totalCarts[i].id == cart) {
-            total = totalCarts[i].price;
             console.log(totalCarts[i])
             dataCarts.push(totalCarts[i]);
             dataCarts = JSON.stringify(dataCarts);
@@ -74,10 +73,16 @@ function add(id) {
     }
 
     console.log("Se guardo correctamente");
-
-    let productPrice = price;
-    console.log(productPrice);
-    total += productPrice;
+    let invoices = JSON.parse(localStorage.getItem("Invoices"));
+    for (let i = 0; i < invoices.length; i++) {
+        invoices[i] = JSON.parse(invoices[i]);
+        console.log(invoices[i]);
+        for (let j = 0; j < invoices[i].length; j++) {
+            invoices[i][j].price = parseInt(invoices[i][j].price);
+            total += invoices[i][j].price;
+            console.log(suma);
+        }
+    }
 
     let b = document.getElementById("checkoutB");
     let w = document.getElementById("w");
