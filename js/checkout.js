@@ -36,11 +36,8 @@ function readCheckout() {
                 <h3>${invoices[i][j].title}</h3>
                 <img src="img/${invoices[i][j].img}" />
                 <div class="container-included">
-                  <span>${include.map(item => {
-                    //console.log(item.pro);
-                    return `<li class="list"><i class="fi fi-br-shield-check"></i> ${item}</li>`
-                })}</span>
-                </div>
+                      <div id="${invoices[i][j].title}"></div>
+                    </div>
                 <div class="container-data text-center">
                    <input type="date" name="" id="">
                 </div>
@@ -52,8 +49,24 @@ function readCheckout() {
         }
         totalCheckout();
     }
+    returnItemDescription();
 
 }
+
+function returnItemDescription() {
+    fetch(URL)
+        .then(response => response.json())
+        .then(data => {
+            for (let i = 0; i < data.length; i++) {
+                const { title, img, price, include, id } = data[i];
+                container = document.getElementById(title);
+                container.innerHTML = '';
+                for (let j = 0; j < include.length; j++) {
+                    container.innerHTML += `<li class="list"><i class="fi fi-br-shield-check"></i> ${include[j]}</li><br>`;
+                }
+            }
+        })
+  }
 
 function morePerson(idCant) {
     console.log("entro");
