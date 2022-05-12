@@ -194,6 +194,6 @@ function productNull() {
     }
 }
 
-
+load();
 readCheckout();
 totalCheckout();
