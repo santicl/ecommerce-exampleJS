@@ -56,10 +56,10 @@ function readCheckout() {
         }
         totalCheckout();
     }
-    showAssigns();
+    showDescriptions();
 }
 
-function showAssigns() {
+function showDescriptions() {
     let container;
     for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
@@ -67,12 +67,12 @@ function showAssigns() {
         value = JSON.parse(value);
         for (let j = 0; j < value.length; j++) {
             let value2 = JSON.parse(value[j]);
-            value2.map(item => {
-                const {  include, title } = item;
+            value2.map(contentDescription => {
+                const {  include, title } = contentDescription;
                 container = document.getElementById(title);
                 container.innerHTML = '';
-                include.map(item2 => {
-                    container.innerHTML += `<li class="list"><i class="fi fi-br-shield-check"></i> ${item2}</li><br>`;
+                include.map(description => {
+                    container.innerHTML += `<li class="list"><i class="fi fi-br-shield-check"></i> ${description}</li><br>`;
                 })
             })
         }
