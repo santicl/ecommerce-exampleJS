@@ -7,9 +7,15 @@ let acountTotal = [];
 let forPerson = 1;
 let totalSuma = [];
 
-
+function load() {
+    $(window).load(function () {
+        $(".loader").fadeOut("slow");
+        heroSecond.style.position = "absolute";
+    })
+}
 
 function readCheckout() {
+    load();
     if ((window.location.href === 'http://localhost/paginaTours/tours/checkout.html') || (window.location.href === 'https://toursopen.netlify.app/checkout.html')) {
         let invoices = JSON.parse(localStorage.getItem("Invoices"));
         console.log(invoices);
