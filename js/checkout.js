@@ -2,6 +2,9 @@ window.onload = readCheckout;
 readCheckout.onload = dele;
 readCheckout.onload = productNull;
 readCheckout.ready = totalCheckout;
+readCheckout.ready = returnItemDescription;
+
+const url = 'https://api-tours-default-rtdb.firebaseio.com/tours.json';
 
 let acountTotal = [];
 let forPerson = 1;
@@ -10,14 +13,11 @@ let totalSuma = [];
 function load() {
     $(window).load(function () {
         $(".loader").fadeOut("slow");
-        heroSecond.style.position = "absolute";
+        document.getElementById("page_pay").style.position = "block";
     })
 }
 
-window.onload = readCheckout;
-
 function readCheckout() {
-    load();
     if ((window.location.href === 'http://localhost/paginaTours/tours/checkout.html') || (window.location.href === 'https://toursopen.netlify.app/checkout.html')) {
         let invoices = JSON.parse(localStorage.getItem("Invoices"));
         console.log(invoices);
@@ -34,12 +34,11 @@ function readCheckout() {
 
 
             for (let j = 0; j < invoices[i].length; j++) {
-               // console.log(invoices[i][j]);
+                // console.log(invoices[i][j]);
 
                 //totalSuma.push(invoices[i][j].price);
                 //console.log(totalSuma);
                 let price = new Intl.NumberFormat('es-ES').format(invoices[i][j].price);
-                console.log(price);
                 document.getElementById("content_product_checkout").innerHTML += `<div class="product-container">
                 <h3>${invoices[i][j].title}</h3>
                 <img src="img/${invoices[i][j].img}" />
@@ -57,79 +56,27 @@ function readCheckout() {
         }
         totalCheckout();
     }
-    returnItemDescription();
-
+    showAssigns();
 }
 
-function returnItemDescription() {
-    fetch(URL)
-        .then(response => response.json())
-        .then(data => {
-            for (let i = 0; i < data.length; i++) {
-                const { title, img, price, include, id } = data[i];
+function showAssigns() {
+    let container;
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        let value = localStorage.getItem(key);
+        value = JSON.parse(value);
+        for (let j = 0; j < value.length; j++) {
+            let value2 = JSON.parse(value[j]);
+            value2.map(item => {
+                const {  include, title } = item;
                 container = document.getElementById(title);
                 container.innerHTML = '';
-                for (let j = 0; j < include.length; j++) {
-                    container.innerHTML += `<li class="list"><i class="fi fi-br-shield-check"></i> ${include[j]}</li><br>`;
-                }
-            }
-        })
-  }
-
-function morePerson(idCant) {
-    console.log("entro");
-    let id = idCant;
-    let dataCarts = [];
-    for (let i = 0; i < acountTotal.length; i++) {
-        //acountTotal[i] = JSON.parse(acountTotal[i]);
-        //console.log(acountTotal[i]);
-        for (let j = 0; j < acountTotal[i].length; j++) {
-            if (acountTotal[i][j].id == id) {
-                acountTotal[i][j].count = parseInt(acountTotal[i][j].count);
-                acountTotal[i][j].count = acountTotal[i][j].count + 1;
-                acountTotal[i][j].count = acountTotal[i][j].count.toString();
-                acountTotal[i] = JSON.stringify(acountTotal[i]);
-                //dataCarts.push(JSON.stringify(acountTotal[i][j]));
-                //dataCarts.push(totalCarts[i]);
-                
-            } else if (acountTotal[i][j].id !== id) {
-                acountTotal[i] = acountTotal[i];
-                console.log(acountTotal[i]);
-            }
+                include.map(item2 => {
+                    container.innerHTML += `<li class="list"><i class="fi fi-br-shield-check"></i> ${item2}</li><br>`;
+                })
+            })
         }
-        //dataCarts.push(acountTotal[i]);
-        
     }
-    //dataCarts.push(acountTotal);
-    console.log(dataCarts);
-    console.log(acountTotal);
-    localStorage.setItem("Invoices", JSON.stringify(acountTotal));
-}
-
-function lessPerson(idCant) {
-    console.log("entro");
-    let id = idCant;
-    //let dataCarts = [];
-    for (let i = 0; i < acountTotal.length; i++) {
-        //acountTotal[i] = JSON.parse(acountTotal[i]);
-        console.log(acountTotal[i]);
-        for (let j = 0; j < acountTotal[i].length; j++) {
-            if (acountTotal[i][j].id == id) {
-                acountTotal[i][j].count = parseInt(acountTotal[i][j].count);
-                acountTotal[i][j].count = acountTotal[i][j].count - 1;
-                acountTotal[i][j].count = acountTotal[i][j].count.toString();
-                acountTotal[i] = JSON.stringify(acountTotal[i]);
-                //dataCarts.push(JSON.stringify(acountTotal[i][j]));
-                //dataCarts.push(totalCarts[i]);
-                
-            }
-        }
-        //dataCarts.push(acountTotal[i]);
-        
-    }
-
-    localStorage.setItem("Invoices", JSON.stringify(acountTotal));
-    readCheckout();
 }
 
 
@@ -153,7 +100,6 @@ function totalCheckout() {
     document.getElementById("iva").innerHTML = `<h3>IVA: $ ${new Intl.NumberFormat('es-ES').format(porcent)}</h3>`;
     document.getElementById("total").innerHTML = `<h3>Total: $ ${new Intl.NumberFormat('es-ES').format(sumaT)}</h3>`;
     //document.getElementById("total_checkout").innerHTML = `<h3>Total: $ ${new Intl.NumberFormat('es-ES').format(suma)}</h3>`;
-
 
 }
 
@@ -195,7 +141,5 @@ function productNull() {
         document.getElementById("content_product_null").style.visibility = "hidden";
     }
 }
-
-load();
 readCheckout();
 totalCheckout();

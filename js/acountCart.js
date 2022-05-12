@@ -49,7 +49,7 @@ function returnItemDescription() {
         .then(response => response.json())
         .then(data => {
             for (let i = 0; i < data.length; i++) {
-                const { title, include } = data[i];
+                const { title, img, price, include, id } = data[i];
                 container = document.getElementById(title);
                 container.innerHTML = '';
                 for (let j = 0; j < include.length; j++) {
@@ -57,7 +57,7 @@ function returnItemDescription() {
                 }
             }
         })
-  }
+}
 
 
 
