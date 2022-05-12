@@ -24,14 +24,14 @@ function read() {
             try {
                 for (let i = 0; i < data.length; i++) {
                     const { title, img, price, include, id } = data[i];
-                    let returnItem = returnItemDescription(include);
+                    let newPrice = new Intl.NumberFormat('es-ES').format(price);
                     show += `<div id="div" class="product-container">
                     <h3>${title}</h3>
                     <img src="img/${img}" />
                     <div class="container-included">
                       <div id="${title}"></div>
                     </div>
-                    <h4>$ ${price}</h4>
+                    <h4>$ ${newPrice}</h4>
                     <button id="add" onclick="add('${id}')" class="button-add">Agregar</button>
                 </div>`
                 }
@@ -49,7 +49,7 @@ function returnItemDescription() {
         .then(response => response.json())
         .then(data => {
             for (let i = 0; i < data.length; i++) {
-                const { title, img, price, include, id } = data[i];
+                const { title, include } = data[i];
                 container = document.getElementById(title);
                 container.innerHTML = '';
                 for (let j = 0; j < include.length; j++) {

@@ -14,6 +14,8 @@ function load() {
     })
 }
 
+window.onload = readCheckout;
+
 function readCheckout() {
     load();
     if ((window.location.href === 'http://localhost/paginaTours/tours/checkout.html') || (window.location.href === 'https://toursopen.netlify.app/checkout.html')) {
@@ -36,8 +38,8 @@ function readCheckout() {
 
                 //totalSuma.push(invoices[i][j].price);
                 //console.log(totalSuma);
-                const  { include } = invoices[i][j];
                 let price = new Intl.NumberFormat('es-ES').format(invoices[i][j].price);
+                console.log(price);
                 document.getElementById("content_product_checkout").innerHTML += `<div class="product-container">
                 <h3>${invoices[i][j].title}</h3>
                 <img src="img/${invoices[i][j].img}" />
