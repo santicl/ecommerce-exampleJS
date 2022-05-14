@@ -7,7 +7,6 @@ readCheckout.ready = returnItemDescription;
 const url = 'https://api-tours-default-rtdb.firebaseio.com/tours.json';
 
 let acountTotal = [];
-let forPerson = 1;
 let totalSuma = [];
 
 function load() {
@@ -77,6 +76,8 @@ function showDescriptions() {
             })
         }
     }
+    productNull();
+    totalCheckout();
 }
 
 

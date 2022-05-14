@@ -108,13 +108,4 @@ function add(id) {
 
     totalSum = new Intl.NumberFormat('es-ES').format(total);
     document.getElementById("checkoutB").innerHTML = `Pagar $${totalSum}`;
-    showPayment();
-}
-
-function showPayment() {
-    for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        const value = localStorage.getItem(key);
-        console.log(key, value);
-    }
 }
