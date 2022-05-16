@@ -108,4 +108,27 @@ function add(id) {
 
     totalSum = new Intl.NumberFormat('es-ES').format(total);
     document.getElementById("checkoutB").innerHTML = `Pagar $${totalSum}`;
+    btnPay();
+}
+
+function btnPay() {
+    let totalPrice = 0;
+    let b = document.getElementById("checkoutB");
+    for (let i = 0; i < localStorage.length; i++) {
+        let key = localStorage.key(i);
+        let value = localStorage.getItem(key);
+        value = JSON.parse(value);
+        value.map(tour => {
+            tour = JSON.parse(tour);
+            for (let j = 0; j < tour.length; j++) {
+                totalPrice += tour[j].price;
+            }
+        })
+    }
+
+    if (totalPrice > 0) {
+        b.style.visibility = "visible";
+        totalPrice = new Intl.NumberFormat('es-ES').format(totalPrice);
+        b.innerHTML = `Pagar $${totalPrice}`;
+    }
 }
