@@ -3,6 +3,7 @@ readCheckout.onload = dele;
 readCheckout.onload = productNull;
 readCheckout.ready = totalCheckout;
 readCheckout.ready = returnItemDescription;
+readCheckout.ready = showProducts;
 
 const url = 'https://api-tours-default-rtdb.firebaseio.com/tours.json';
 
@@ -38,16 +39,8 @@ function readCheckout() {
                 //totalSuma.push(invoices[i][j].price);
                 //console.log(totalSuma);
                 let price = new Intl.NumberFormat('es-ES').format(invoices[i][j].price);
-                document.getElementById("content_product_checkout").innerHTML += `<div class="product-container">
+                document.getElementById("content_product_checkout").innerHTML += `<div class="product-container-check">
                 <h3>${invoices[i][j].title}</h3>
-                <img src="img/${invoices[i][j].img}" />
-                <div class="container-included">
-                      <div id="${invoices[i][j].title}"></div>
-                    </div>
-                <div class="container-data text-center">
-                   <input type="date" name="" id="">
-                </div>
-                <h4>$ ${price}</h4>
                 <button id="add" class="button-add" onclick="dele('${invoices[i][j].id}')">Eliminar</button>
             </div>`;
             }
@@ -55,7 +48,7 @@ function readCheckout() {
         }
         totalCheckout();
     }
-    showDescriptions();
+    showProducts();
 }
 
 function showDescriptions() {
@@ -67,7 +60,7 @@ function showDescriptions() {
         for (let j = 0; j < value.length; j++) {
             let value2 = JSON.parse(value[j]);
             value2.map(contentDescription => {
-                const {  include, title } = contentDescription;
+                const { include, title } = contentDescription;
                 container = document.getElementById(title);
                 container.innerHTML = '';
                 include.map(description => {
@@ -100,7 +93,6 @@ function totalCheckout() {
     document.getElementById("subtotal_checkout").innerHTML += `<h3>SubTotal: $ ${new Intl.NumberFormat('es-ES').format(suma)}</h3>`;
     document.getElementById("iva").innerHTML = `<h3>IVA: $ ${new Intl.NumberFormat('es-ES').format(porcent)}</h3>`;
     document.getElementById("total").innerHTML = `<h3>Total: $ ${new Intl.NumberFormat('es-ES').format(sumaT)}</h3>`;
-    //document.getElementById("total_checkout").innerHTML = `<h3>Total: $ ${new Intl.NumberFormat('es-ES').format(suma)}</h3>`;
 
 }
 
@@ -132,14 +124,37 @@ function dele(id) {
 }
 
 
+function showProducts() {
+    let b = document.getElementById("products");
+    b.innerHTML = '';
+    let v;
+    for (let i = 0; i < localStorage.length; i++) {
+        let key = localStorage.key(i);
+        let value = localStorage.getItem(key);
+        value = JSON.parse(value);
+        value.forEach(tour => {
+            tour = JSON.parse(tour);
+            tour.forEach(product => {
+                b.innerHTML += `<div class="container-span"><span class="span-title">${product.title}<div class="i-dele"><i onclick="dele('${product.id}')" id="delete" class="fi fi-rr-cross-circle"></i></div><span></div>`
+            })
+        })
+    }
+}
+
 function productNull() {
     if (document.getElementById("content_product_checkout").innerHTML === '') {
         document.getElementById("content_product_null").style.visibility = "visible";
+        document.getElementById("container_product").style.visibility = "hidden";
         document.getElementById("subtotal_checkout").style.visibility = "hidden";
         document.getElementById("iva").style.visibility = "hidden";
         document.getElementById("total").style.visibility = "hidden";
+        document.getElementById("total").style.position = "absolute";
+        document.getElementById("container_product").style.position = "absolute";
+        document.getElementById("subtotal_checkout").style.position = "absolute";
+        document.getElementById("iva").style.position = "absolute";
     } else {
         document.getElementById("content_product_null").style.visibility = "hidden";
+        document.getElementById("content_product_null").style.position = "block";
     }
 }
 readCheckout();

@@ -58,7 +58,6 @@
                 <div class="navbar-nav ml-auto">
                     <a id="nav" href="index.html" class="nav-item nav-link">Inicio</a>
                     <a id="nav" href="about.html" class="nav-item nav-link">Sobre Nosotros</a>
-                    <a id="nav" href="feature.html" class="nav-item nav-link">Tours</a>
                     <div class="nav-item dropdown">
                         <a id="nav" href="#" class="nav-link dropdown-toggle active"
                             data-toggle="dropdown">Alojamientos</a>
@@ -89,6 +88,98 @@
                 <div class="page-pro">
                     <div class="container">
                         <!-- Checkout Container Start -->
+                        <div class="container_product text-center" id="container_product">
+                            <div>
+                                <div class="booking-form">
+                                    <form id="reservar" netlify>
+                                        <div class="control-group">
+                                            <div id="content-input" class="input-group">
+                                                <div id="products" class="form-control"></div>
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text"><i id="delete"
+                                                            class="fi fi-br-shield-check"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Nombre"
+                                                    required="required" />
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text"><i class="far fa-user"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <div class="input-group">
+                                                <input type="email" class="form-control" placeholder="Correo"
+                                                    required="required" />
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text"><i class="far fa-envelope"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Cel"
+                                                    required="required" />
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text"><i class="fa fa-mobile-alt"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <div class="input-group date" id="date" data-target-input="nearest">
+                                                <input type="text" class="form-control datetimepicker-input"
+                                                    placeholder="Fecha" data-target="#date"
+                                                    data-toggle="datetimepicker" />
+                                                <div class="input-group-append" data-target="#date"
+                                                    data-toggle="datetimepicker">
+                                                    <div class="input-group-text"><i class="far fa-calendar-alt"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <div class="input-group time" id="time" data-target-input="nearest">
+                                                <input type="text" class="form-control datetimepicker-input"
+                                                    placeholder="Hora" data-target="#time"
+                                                    data-toggle="datetimepicker" />
+                                                <div class="input-group-append" data-target="#time"
+                                                    data-toggle="datetimepicker">
+                                                    <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <div class="input-group">
+                                                <select class="custom-select form-control">
+                                                    <option selected>Numero de personas</option>
+                                                    <option value="1">1 Persona</option>
+                                                    <option value="2">2 Persona</option>
+                                                    <option value="3">3 Persona</option>
+                                                    <option value="4">4 Persona</option>
+                                                    <option value="5">5 Persona</option>
+                                                    <option value="6">6 Persona</option>
+                                                    <option value="7">7 Persona</option>
+                                                    <option value="8">8 Persona</option>
+                                                    <option value="9">9 Persona</option>
+                                                    <option value="10">10 Persona</option>
+                                                </select>
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text"><i class="fa fa-chevron-down"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <button id="btnCheck" class="btn custom-btn" type="submit">Reserva ya</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
                         <div data-aos="fade-up" id="content_product_checkout" class="page-content">
                             <!-- Carts Products Here (acountCard.js) -->
                         </div>
@@ -104,7 +195,6 @@
                         <div class="total_suma_total-t text-center" id="total">
                             <!-- TOTAL -->
                         </div>
-
                         <!-- Total Checkout -->
 
                         <div id="content_product_null" class="page-content">
