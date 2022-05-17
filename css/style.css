@@ -115,6 +115,82 @@ a:focus {
     transition: .5s;
 }
 
+.content {
+    position: absolute;
+}
+
+i[class^="fi-rr-"]:before, i[class*=" fi-rr-"]:before, span[class^="fi-rr-"]:before, span[class*="fi-rr-"]:before {
+    color: #fbaf32;
+    font-family: uicons-regular-rounded !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fi-rs-marker:before {
+    position: absolute;
+    color: #fbaf32;
+    font-family: uicons-regular-rounded !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+i[class^="fi-rs-"]:before, i[class*=" fi-rs-"]:before, span[class^="fi-rs-"]:before, span[class*="fi-rs-"]:before {
+    position: absolute;
+    color: #fbaf32;
+    font-family: uicons-regular-straight !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-chevron-up:before {
+    color: white;
+    content: "\f077";
+}
+
+.fa-instagram:before {
+    color: white;
+    content: "\f16d";
+}
+
+.fa-facebook-f:before {
+    content: "\f39e";
+    color: white;
+}
+
+i.fi.fi-rs-marker {
+    margin-left: 8px;
+    position: absolute;
+}
+
+i.fi.fi-rr-calendar {
+    position: absolute;
+    margin-left: 8px;
+}
+
+i.fi.fi-rr-user {
+    position: absolute;
+    margin-left: 8px;
+}
+
+::before {
+    color: white;
+}
+
 #btnCheck {
     margin-top: 12px;
     width: 100%;
