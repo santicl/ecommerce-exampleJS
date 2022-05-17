@@ -157,6 +157,42 @@ i[class^="fi-rs-"]:before, i[class*=" fi-rs-"]:before, span[class^="fi-rs-"]:bef
     -moz-osx-font-smoothing: grayscale;
 }
 
+i.fa-chevron-down:before {
+    color: white;
+    margin-left: 20px;
+    content: "\f078";
+}
+
+i.fa-clock:before {
+    color: white;
+    margin-left: 20px;
+    content: "\f017";
+}
+
+i.fa-calendar-alt:before {
+    color: white;
+    content: "\f073";
+    margin-left: 20px;
+}
+
+i.fa-mobile-alt:before {
+    color: white;
+    margin-left: 20px;
+    content: "\f3cd";
+}
+
+i.fa-envelope:before {
+    color: white;
+    margin-left: 20px;
+    content: "\f0e0";
+}
+
+i.fa-user:before {
+    color: white;
+    margin-left: 20px;
+    content: "\f007";
+}
+
 .fa-chevron-up:before {
     color: white;
     content: "\f077";
