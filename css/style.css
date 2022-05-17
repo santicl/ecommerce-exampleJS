@@ -145,7 +145,6 @@ i[class^="fi-rr-"]:before, i[class*=" fi-rr-"]:before, span[class^="fi-rr-"]:bef
 }
 
 i[class^="fi-rs-"]:before, i[class*=" fi-rs-"]:before, span[class^="fi-rs-"]:before, span[class*="fi-rs-"]:before {
-    position: absolute;
     color: #fbaf32;
     font-family: uicons-regular-straight !important;
     font-style: normal;
@@ -215,7 +214,6 @@ i.fi.fi-rs-marker {
 
 i.fi.fi-rr-calendar {
     position: absolute;
-    margin-left: 8px;
 }
 
 i.fi.fi-rr-user {
