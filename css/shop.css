@@ -172,3 +172,7 @@ button {
     overflow: hidden;
 }
 
+.glider {
+    overflow-x: auto;
+}
+
