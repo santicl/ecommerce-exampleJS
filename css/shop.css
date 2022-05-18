@@ -37,8 +37,6 @@ button {
 
 .page-content {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
 }
 
 .product-container {
@@ -132,3 +130,45 @@ button {
 .input-group-text {
     height: 40px;
 }
+
+.carrousel__container {
+    padding: 35px;
+}
+
+.carrousel__container {
+    position: relative;
+}
+
+.carousel__btn-anterior, .carousel__btn-despues {
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: none;
+    top: calc(50% - 35px);
+    cursor: pointer;
+    line-height: 30px;
+    text-align: center;
+    background: none;
+    color: #fff;
+    opacity: 20%;
+}
+
+.carousel__btn-anterior {
+    position: absolute;
+    text-align: center;
+
+    background-color: black;
+    left: -5px;
+}
+
+.carousel__btn-despues {
+    text-align: center;
+    background-color: black;
+    right: -5px;
+}
+
+.content_product {
+    overflow: hidden;
+}
+
