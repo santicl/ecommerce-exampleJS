@@ -33,7 +33,7 @@ function readCheckout() {
 
 
             for (let j = 0; j < invoices[i].length; j++) {
-                title += invoices[i][j].title;
+                title += invoices[i][j].title + " ";
                 let price = new Intl.NumberFormat('es-ES').format(invoices[i][j].price);
                 document.getElementById("content_product_checkout").innerHTML += `<div class="product-container-check">
                 <h3>${invoices[i][j].title}</h3>
