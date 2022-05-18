@@ -22,8 +22,7 @@ function readCheckout() {
         let invoices = JSON.parse(localStorage.getItem("Invoices"));
         console.log(invoices);
         acountTotal = invoices;
-        //console.log(acountTotal);
-        //console.log(invoices);
+        let title = '';
 
 
         productNull();
@@ -34,10 +33,7 @@ function readCheckout() {
 
 
             for (let j = 0; j < invoices[i].length; j++) {
-                // console.log(invoices[i][j]);
-
-                //totalSuma.push(invoices[i][j].price);
-                //console.log(totalSuma);
+                title += invoices[i][j].title;
                 let price = new Intl.NumberFormat('es-ES').format(invoices[i][j].price);
                 document.getElementById("content_product_checkout").innerHTML += `<div class="product-container-check">
                 <h3>${invoices[i][j].title}</h3>
@@ -46,6 +42,8 @@ function readCheckout() {
             }
 
         }
+        let input = document.getElementById("content-input__title").value = title;
+        console.log(input);
         totalCheckout();
     }
     showProducts();
