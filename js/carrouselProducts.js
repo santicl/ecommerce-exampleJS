@@ -4,9 +4,5 @@ window.addEventListener("load", function() {
         slidesToScroll: 5,
         draggable: true,
         dots: '.carousel__indicadores',
-        arrows: {
-            prev: '.carousel__btn-anterior',
-            next: '.carousel__btn-despues'
-        }
     });
 })
