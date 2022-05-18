@@ -11,14 +11,15 @@ const URL = 'https://api-tours-default-rtdb.firebaseio.com/tours.json';
 
 
 if ((window.location.href === 'http://localhost/paginaTours/tours/shop.html') || (window.location.href === 'https://toursopen.netlify.app/shop.html')) {
-    window.onload = read;
+    window.onload = readOutsideOrInsideTour;
 }
 
-read.ready = verifyContentStorage;
+readOutsideOrInsideTour.onload = verifyContentStorage;
 
-function read() {
-    console.log("read");
-    let show = '';
+function readOutsideOrInsideTour() {
+    console.log("readOutsideOrInsideTour");
+    let showOutside = '';
+    let showInside = '';
     fetch(URL)
         .then(response => response.json())
         .then(data => {
@@ -26,9 +27,11 @@ function read() {
             console.log(totalCarts)
             try {
                 for (let i = 0; i < data.length; i++) {
-                    const { title, img, price, include, id } = data[i];
+                    const { title, img, price, include, id, type } = data[i];
                     let newPrice = new Intl.NumberFormat('es-ES').format(price);
-                    show += `<div id="div" class="product-container">
+                    if (type === 'outside') {
+                        console.log(type)
+                        showOutside += `<div id="div" class="product-container">
                     <h3>${title}</h3>
                     <img src="img/${img}" />
                     <div class="container-included">
@@ -36,10 +39,23 @@ function read() {
                     </div>
                     <h4>$ ${newPrice}</h4>
                     <button id="add${id}" onclick="add('${id}')" class="button-add">Agregar</button>
-                    <button style="visibility: hidden" id="${id}" onclick="deleteItem('${id}')" class="button-add btn btn-danger">Quitar</button>
+                    <button style="visibility: hidden" id="${id}" onclick="deleteItem('${id}')" class="button-add">Quitar</button>
                 </div>`
+                    } else {
+                        showInside += `<div id="div" class="product-container">
+                        <h3>${title}</h3>
+                        <img src="img/${img}" />
+                        <div class="container-included">
+                          <div id="${title}"></div>
+                        </div>
+                        <h4>$ ${newPrice}</h4>
+                        <button id="add${id}" onclick="add('${id}')" class="button-add">Agregar</button>
+                        <button style="visibility: hidden" id="${id}" onclick="deleteItem('${id}')" class="button-add">Quitar</button>
+                    </div>`
+                    }
                 }
-                document.getElementById("content_product").innerHTML = show;
+                document.getElementById("content_product").innerHTML = showOutside;
+                document.getElementById("carousel__container_content_product").innerHTML = showInside;
                 verifyContentStorage();
                 btnPay();
             } catch (error) {
@@ -185,6 +201,6 @@ function deleteItem(id) {
             console.log(dataTotal);
         });
         localStorage.setItem("Invoices", JSON.stringify(dataTotal));
-        read();
+        readOutsideOrInsideTour();
         verifyContentStorage();
 }

@@ -89,6 +89,8 @@ button {
 
 
 .button-add {
+    width: 100px;
+    margin-right: 5px;
     background-color: white;
     color: black;
     border: 2px solid #4CAF50; /* Green */
@@ -169,6 +171,10 @@ button {
 }
 
 .content_product {
+    overflow: hidden;
+}
+
+.carousel__container_content_product {
     overflow: hidden;
 }
 
