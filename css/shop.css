@@ -268,3 +268,10 @@ i[class^="fi-sr-"]:before, i[class*=" fi-sr-"]:before, span[class^="fi-sr-"]:bef
     -moz-osx-font-smoothing: grayscale;
     margin-right: 5px;
 }
+
+i.fi.fi-rr-interrogation.inte-info {
+    margin-left: 2px;
+    font-size: 17px;
+    margin-top: -5px;
+    position: absolute;
+}
