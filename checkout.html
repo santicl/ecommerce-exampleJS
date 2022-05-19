@@ -188,21 +188,38 @@
                             <div data-aos="fade-up" id="content_product_checkout" class="page-content-ck">
                                 <!-- Carts Products Here (acountCard.js) -->
                             </div>
-    
+
                             <!-- Total Checkout -->
-    
+
                             <div id="container-total" class="container-total">
                                 <div class="container-total-sub">
-                                    <div class="subtotal"><h3>Subtotal: </h3></div>
-                                    <div id="sub" class="container-number"><h3>$ 0</h3></div>
+                                    <div class="subtotal">
+                                        <h3>Subtotal: </h3>
+                                    </div>
+                                    <div id="sub" class="container-number">
+                                        <h3>$ 0</h3>
+                                    </div>
                                 </div>
                                 <div class="container-total-iva">
-                                    <div class="iva"><h3>Iva: <i id="info-iva" class="fi fi-rr-interrogation inte-info"></i></h3></div>
-                                    <div id="iva" class="container-number"><h3>$ 0</h3></div>
+                                    <div class="iva">
+                                        <h3>IVA: <i id="info-iva" class="fi fi-rr-interrogation inte-info">
+                                                <div id="popup" style="visibility: hidden; position: absolute;" class="container-info">
+                                                    <a class="btn-cerrar-popup"><i id="btn-cerrar-popup" class="fas fa-times"></i></a>
+                                                    <p class="paragraph-info">Este es un impuesto indirecto, el cual recae sobre los costos de cada venta generada</p>
+                                                </div>
+                                            </i></h3>
+                                    </div>
+                                    <div id="iva" class="container-number">
+                                        <h3>$ 0</h3>
+                                    </div>
                                 </div>
                                 <div class="container-total-total">
-                                    <div class="total"><h3>Total: </h3></div>
-                                    <div id="total" class="container-number"><h3>$ 0</h3></div>
+                                    <div class="total">
+                                        <h3>Total: </h3>
+                                    </div>
+                                    <div id="total" class="container-number">
+                                        <h3>$ 0</h3>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -300,6 +317,7 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script async src="js/checkout.js"></script>
+    <script src="js/popup.js"></script>
 </body>
 
 </html>

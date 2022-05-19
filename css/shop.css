@@ -275,3 +275,23 @@ i.fi.fi-rr-interrogation.inte-info {
     margin-top: -5px;
     position: absolute;
 }
+
+.container-info {
+    width: 1250%;
+    margin-top: -100px;
+    background: beige;
+}
+
+.paragraph-info {
+    color: white;
+    margin-top: 25px;
+}
+
+.container-info {
+    background-color: rgba(255, 255, 0, 0.2);
+    margin-top: -100px;
+    height: 100px;
+    width: 350px;
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+}
