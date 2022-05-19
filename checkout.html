@@ -95,7 +95,8 @@
                                         <div class="control-group">
                                             <div id="content-input" class="input-group">
                                                 <div id="products" class="form-control"></div>
-                                                <input name="Tours" class="content" style="visibility: hidden" id="content-input__title" type="text"/>
+                                                <input name="Tours" class="content" style="visibility: hidden"
+                                                    id="content-input__title" type="text" />
                                                 <div class="input-group-append">
                                                     <div class="input-group-text"><i id="delete"
                                                             class="fi fi-br-shield-check"></i></div>
@@ -104,8 +105,8 @@
                                         </div>
                                         <div class="control-group">
                                             <div class="input-group">
-                                                <input name="Nombre" type="text" class="form-control" placeholder="Nombre"
-                                                    required="required" />
+                                                <input name="Nombre" type="text" class="form-control"
+                                                    placeholder="Nombre" required="required" />
                                                 <div class="input-group-append">
                                                     <div class="input-group-text"><i class="fi fi-rs-user"></i></div>
                                                 </div>
@@ -113,10 +114,11 @@
                                         </div>
                                         <div class="control-group">
                                             <div class="input-group">
-                                                <input name="Email" type="email" class="form-control" placeholder="Correo"
-                                                    required="required" />
+                                                <input name="Email" type="email" class="form-control"
+                                                    placeholder="Correo" required="required" />
                                                 <div class="input-group-append">
-                                                    <div class="input-group-text"><i class="fi fi-rr-envelope"></i></div>
+                                                    <div class="input-group-text"><i class="fi fi-rr-envelope"></i>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -125,15 +127,16 @@
                                                 <input name="Cel" type="tel" class="form-control" placeholder="Cel"
                                                     required="required" />
                                                 <div class="input-group-append">
-                                                    <div class="input-group-text"><i class="fi fi-rr-smartphone"></i></div>
+                                                    <div class="input-group-text"><i class="fi fi-rr-smartphone"></i>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <div class="input-group date" id="date" data-target-input="nearest">
-                                                <input name="Fecha" type="text" class="form-control datetimepicker-input"
-                                                    placeholder="Fecha" data-target="#date"
-                                                    data-toggle="datetimepicker" />
+                                                <input name="Fecha" type="text"
+                                                    class="form-control datetimepicker-input" placeholder="Fecha"
+                                                    data-target="#date" data-toggle="datetimepicker" />
                                                 <div class="input-group-append" data-target="#date"
                                                     data-toggle="datetimepicker">
                                                     <div class="input-group-text"><i class="fi fi-rs-calendar"></i>
@@ -148,7 +151,8 @@
                                                     data-toggle="datetimepicker" />
                                                 <div class="input-group-append" data-target="#time"
                                                     data-toggle="datetimepicker">
-                                                    <div class="input-group-text"><i class="fi fi-rr-time-check"></i></div>
+                                                    <div class="input-group-text"><i class="fi fi-rr-time-check"></i>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -174,27 +178,32 @@
                                             </div>
                                         </div>
                                         <div>
-                                            <button id="btnCheck" class="btn custom-btn" type="submit">Reserva ya</button>
+                                            <button id="btnCheck" class="btn custom-btn" type="submit">Reserva
+                                                ya</button>
                                         </div>
                                     </form>
                                 </div>
                             </div>
-
-                        </div>
-                        <div data-aos="fade-up" id="content_product_checkout" class="page-content">
-                            <!-- Carts Products Here (acountCard.js) -->
-                        </div>
-
-                        <!-- Total Checkout -->
-
-                        <div class="subtotal_checkout text-center" id="subtotal_checkout">
-                            <!-- SUBTotal -->
-                        </div>
-                        <div class="total_suma_total-IVA text-center" id="iva">
-                            <!-- IVA -->
-                        </div>
-                        <div class="total_suma_total-t text-center" id="total">
-                            <!-- TOTAL -->
+                            <div data-aos="fade-up" id="content_product_checkout" class="page-content-ck">
+                                <!-- Carts Products Here (acountCard.js) -->
+                            </div>
+    
+                            <!-- Total Checkout -->
+    
+                            <div id="container-total" class="container-total">
+                                <div class="container-total-sub">
+                                    <div class="subtotal"><h3>Subtotal: </h3></div>
+                                    <div id="sub" class="container-number"><h3>$ 0</h3></div>
+                                </div>
+                                <div class="container-total-iva">
+                                    <div class="iva"><h3>Iva: </h3></div>
+                                    <div id="iva" class="container-number"><h3>$ 0</h3></div>
+                                </div>
+                                <div class="container-total-total">
+                                    <div class="total"><h3>Total: </h3></div>
+                                    <div id="total" class="container-number"><h3>$ 0</h3></div>
+                                </div>
+                            </div>
                         </div>
                         <!-- Total Checkout -->
 

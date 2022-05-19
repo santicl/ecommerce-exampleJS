@@ -105,6 +105,23 @@ button {
     color: white;
 }
 
+.button-dele {
+    margin-right: 5px;
+    background-color: white;
+    color: red;
+    font-size: 10px;
+    border: 2px solid red; /* Green */
+    transition-duration: 0.4s;
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+}
+  
+.button-dele:hover {
+    background-color: red; /* Green */
+    color: white;
+}
+
 ::before {
     color: white;
 }
@@ -180,5 +197,61 @@ button {
 
 .glider {
     overflow-x: auto;
+}
+
+.container-products {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    text-align: justify;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 10%);
+    background-color: white;
+}
+
+.produc {
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.produc img {
+    width: 20%;
+    border-radius: 20px;
+}
+
+.descriptions {
+    width: 100%;
+}
+
+
+.descriptions h2 {
+    font-size: 20px;
+    width: 60%;
+    margin-left: 20px;
+}
+
+.rank-and-btn {
+    display: flex;
+}
+
+.descriptions h3 {
+    font-size: 15px;
+    width: 60%;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.container-total {
+    width: 100%;
+}
+
+.container-total-sub, .container-total-iva, .container-total-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
 }
 

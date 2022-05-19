@@ -35,9 +35,17 @@ function readCheckout() {
             for (let j = 0; j < invoices[i].length; j++) {
                 title += "(" + invoices[i][j].title + ") ";
                 let price = new Intl.NumberFormat('es-ES').format(invoices[i][j].price);
-                document.getElementById("content_product_checkout").innerHTML += `<div class="product-container-check">
-                <h3>${invoices[i][j].title}</h3>
-                <button id="add" class="button-add" onclick="dele('${invoices[i][j].id}')">Eliminar</button>
+                document.getElementById("content_product_checkout").innerHTML += `<div class="container-products">
+                <div class="produc">
+                        <img src="img/${invoices[i][j].img}" alt="${invoices[i][j].title}">
+                    <div class="descriptions">
+                        <h2>${invoices[i][j].title}</h2>
+                        <h3>estrelas</h3>
+                    </div>
+                    <div class="rank-and-btn">
+                        <button class="button-dele" onclick="dele('${invoices[i][j].id}')">Eliminar</button>
+                    </div>
+                </div>
             </div>`;
             }
 
@@ -76,7 +84,6 @@ function totalCheckout() {
     let invoices = JSON.parse(localStorage.getItem("Invoices"));
     let suma = 0;
     let porcent = 0;
-    document.getElementById("subtotal_checkout").innerHTML = '';
     for (let i = 0; i < invoices.length; i++) {
         invoices[i] = JSON.parse(invoices[i]);
         for (let j = 0; j < invoices[i].length; j++) {
@@ -87,10 +94,9 @@ function totalCheckout() {
         }
     }
     let sumaT = suma + porcent;
-
-    document.getElementById("subtotal_checkout").innerHTML += `<h3>SubTotal: $ ${new Intl.NumberFormat('es-ES').format(suma)}</h3>`;
-    document.getElementById("iva").innerHTML = `<h3>IVA: $ ${new Intl.NumberFormat('es-ES').format(porcent)}</h3>`;
-    document.getElementById("total").innerHTML = `<h3>Total: $ ${new Intl.NumberFormat('es-ES').format(sumaT)}</h3>`;
+    document.getElementById("sub").innerHTML = `<h3> $ ${new Intl.NumberFormat('es-ES').format(suma)}</h3>`;
+    document.getElementById("iva").innerHTML = `<h3> $ ${new Intl.NumberFormat('es-ES').format(porcent)}</h3>`;
+    document.getElementById("total").innerHTML = `<h3> $ ${new Intl.NumberFormat('es-ES').format(sumaT)}</h3>`;
 
 }
 
@@ -143,8 +149,11 @@ function productNull() {
     if (document.getElementById("content_product_checkout").innerHTML === '') {
         document.getElementById("content_product_null").style.visibility = "visible";
         document.getElementById("container_product").style.visibility = "hidden";
+        document.getElementById("container_product").style.position = "absolute";
         document.getElementById("subtotal_checkout").style.visibility = "hidden";
         document.getElementById("iva").style.visibility = "hidden";
+        document.getElementById("container-total").style.visibility = "hidden";
+        document.getElementById("container-total").style.position = "absolute";
         document.getElementById("total").style.visibility = "hidden";
         document.getElementById("total").style.position = "absolute";
         document.getElementById("container_product").style.position = "absolute";
