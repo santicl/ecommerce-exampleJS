@@ -279,19 +279,23 @@ i.fi.fi-rr-interrogation.inte-info {
 .container-info {
     width: 1250%;
     margin-top: -100px;
-    background: beige;
+    background: linear-gradient(to right, #f12711, #f5af19, 0.9);
 }
 
 .paragraph-info {
-    color: white;
+    color: black;
     margin-top: 25px;
 }
 
 .container-info {
-    background-color: rgba(255, 255, 0, 0.2);
     margin-top: -100px;
     height: 100px;
     width: 350px;
     backdrop-filter: blur(20px);
     border-radius: 12px;
+}
+
+.fa-times:before {
+    color: black;
+    content: "\f00d";
 }
