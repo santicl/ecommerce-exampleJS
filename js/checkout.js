@@ -178,7 +178,7 @@ function rank() {
             container = document.getElementById(id);
             container.innerHTML = '';
             for (let r = 0; r < rank; r++) {
-                container.innerHTML += `<i class="fi fi-ss-star"></i>`;
+                container.innerHTML += `<i class="fi fi-sr-star"></i>`;
             }
             console.log(container);
         }

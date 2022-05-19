@@ -256,9 +256,9 @@ button {
     margin-top: 10px;
 }
 
-i[class^="fi-ss-"]:before, i[class*=" fi-ss-"]:before, span[class^="fi-ss-"]:before, span[class*="fi-ss-"]:before {
-    color: yellow;
-    font-family: uicons-solid-straight !important;
+i[class^="fi-sr-"]:before, i[class*=" fi-sr-"]:before, span[class^="fi-sr-"]:before, span[class*="fi-sr-"]:before {
+    color: #fbaf32;
+    font-family: uicons-solid-rounded !important;
     font-style: normal;
     font-weight: normal !important;
     font-variant: normal;
@@ -266,4 +266,5 @@ i[class^="fi-ss-"]:before, i[class*=" fi-ss-"]:before, span[class^="fi-ss-"]:bef
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    margin-right: 5px;
 }
