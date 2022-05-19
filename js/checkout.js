@@ -4,6 +4,7 @@ readCheckout.onload = productNull;
 readCheckout.ready = totalCheckout;
 readCheckout.ready = returnItemDescription;
 readCheckout.ready = showProducts;
+readCheckout.ready = rank;
 
 const url = 'https://api-tours-default-rtdb.firebaseio.com/tours.json';
 
@@ -40,7 +41,7 @@ function readCheckout() {
                         <img src="img/${invoices[i][j].img}" alt="${invoices[i][j].title}">
                     <div class="descriptions">
                         <h2>${invoices[i][j].title}</h2>
-                        <h3>estrelas</h3>
+                        <div class="star" id="${invoices[i][j].id}"></div>
                     </div>
                     <div class="rank-and-btn">
                         <button class="button-dele" onclick="dele('${invoices[i][j].id}')">Eliminar</button>
@@ -55,6 +56,7 @@ function readCheckout() {
         totalCheckout();
     }
     showProducts();
+    rank();
 }
 
 function showDescriptions() {
@@ -164,5 +166,24 @@ function productNull() {
         document.getElementById("content_product_null").style.position = "block";
     }
 }
+
+function rank() {
+    let invoices = JSON.parse(localStorage.getItem("Invoices"));
+    let rankStars;
+    let container;
+    for (let i = 0; i < invoices.length; i++) {
+        invoices[i] = JSON.parse(invoices[i]);
+        for (let j = 0; j < invoices[i].length; j++) {
+            const { rank, id } = invoices[i][j];
+            container = document.getElementById(id);
+            container.innerHTML = '';
+            for (let r = 0; r < rank; r++) {
+                container.innerHTML += `<i class="fi fi-ss-star"></i>`;
+            }
+            console.log(container);
+        }
+    }
+}
+
 readCheckout();
 totalCheckout();

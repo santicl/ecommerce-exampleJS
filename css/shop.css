@@ -219,7 +219,8 @@ button {
 }
 
 .produc img {
-    width: 20%;
+    width: 120px;
+    height: 100%;
     border-radius: 20px;
 }
 
@@ -230,7 +231,7 @@ button {
 
 .descriptions h2 {
     font-size: 20px;
-    width: 60%;
+    width: 100%;
     margin-left: 20px;
 }
 
@@ -238,7 +239,7 @@ button {
     display: flex;
 }
 
-.descriptions h3 {
+.descriptions .star {
     font-size: 15px;
     width: 60%;
     margin-left: 20px;
@@ -255,3 +256,14 @@ button {
     margin-top: 10px;
 }
 
+i[class^="fi-ss-"]:before, i[class*=" fi-ss-"]:before, span[class^="fi-ss-"]:before, span[class*="fi-ss-"]:before {
+    color: yellow;
+    font-family: uicons-solid-straight !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
