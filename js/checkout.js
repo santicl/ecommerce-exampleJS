@@ -14,7 +14,6 @@ let totalSuma = [];
 function load() {
     $(window).load(function () {
         $(".loader").fadeOut("slow");
-        document.getElementById("page_pay").style.position = "block";
     })
 }
 
@@ -80,7 +79,6 @@ function showDescriptions() {
     productNull();
     totalCheckout();
 }
-
 
 function totalCheckout() {
     let invoices = JSON.parse(localStorage.getItem("Invoices"));
@@ -162,8 +160,8 @@ function productNull() {
         document.getElementById("subtotal_checkout").style.position = "absolute";
         document.getElementById("iva").style.position = "absolute";
     } else {
-        document.getElementById("content_product_null").style.visibility = "hidden";
         document.getElementById("content_product_null").style.position = "block";
+        document.getElementById("content_product_null").style.visibility = "hidden";
     }
 }
 

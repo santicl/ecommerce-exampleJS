@@ -1,15 +1,15 @@
-var popup = document.getElementById("popup"),
-    btnCloded = document.getElementById("btn-cerrar-popup"),
-    openPopup = document.getElementById("info-iva");
+const popup = document.getElementById("popup");
+const close = document.getElementById("btn-cerrar-popup");
+const openPopup = document.getElementById("info-iva");
 
-
-
-    openPopup.addEventListener("click", function (e) {
+openPopup.addEventListener("click", () => {
+    console.log("click");
     popup.style.visibility = "visible";
-})
+    popup.style.display = "block";
+});
 
-btnCloded.addEventListener("click", function (e) {
-    e.preventDefault();
+close.addEventListener("click", () => {
     popup.style.display = "none";
     popup.style.visibility = "hidden";
-})
+});
+
