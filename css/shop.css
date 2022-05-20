@@ -304,8 +304,8 @@ i.fi.fi-rr-interrogation.inte-info {
 }
 
 .container-info {
-    margin-left: -50px;
-    margin-top: -100px;
+    margin-left: -10px;
+    margin-top: -80px;
     height: 100px;
     width: 300px;
     backdrop-filter: blur(20px);
