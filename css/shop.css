@@ -320,7 +320,7 @@ i.fi.fi-rr-interrogation.inte-info {
 
 input.input-cody {
     border-radius: 20px;
-    width: 500px;
+    width: 95%;
     height: 45px;
     padding-left: 25px;
     border: 1px solid #fbaf32;
@@ -350,6 +350,6 @@ input.input-cody {
 
 i.fi.fi-rr-ticket.code-primary {
     position: absolute;
-    margin-left: -498px;
+    margin-left: -87%;
     margin-top: 13px;
 }
