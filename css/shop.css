@@ -296,7 +296,7 @@ i.fi.fi-rr-interrogation.inte-info {
 .container-info {
     width: 1250%;
     margin-top: -100px;
-    background: linear-gradient(to right, #f12711, #f5af19, 0.3);
+    background-color: rgba(255,165, 0, 0.1);
 }
 
 .paragraph-info {
@@ -316,4 +316,40 @@ i.fi.fi-rr-interrogation.inte-info {
     color: black;
     content: "\f00d";
     font-size: 12px;
+}
+
+input.input-cody {
+    border-radius: 20px;
+    width: 500px;
+    height: 45px;
+    padding-left: 25px;
+    border: 1px solid #fbaf32;
+}
+
+.btn-primary {
+  width: 120px;
+  height: 30px;
+  background:#fbaf32;
+  font-size: 10px;
+  outline-color: rgba(59, 131, 4189, 0.1);
+  border-color: rgba(59, 131, 4189, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  transition-duration: 0.2s;
+  margin-left: -132px;
+  margin-bottom: 2px;
+}
+
+.btn-primary:hover {
+  background-color:#fbaf32;
+  outline-color:#fbaf32;
+  border-color:#fbaf32;
+  width: 125px;
+  height: 30px;
+}
+
+i.fi.fi-rr-ticket.code-primary {
+    position: absolute;
+    margin-left: -498px;
+    margin-top: 13px;
 }
