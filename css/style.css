@@ -156,6 +156,17 @@ i[class^="fi-rs-"]:before, i[class*=" fi-rs-"]:before, span[class^="fi-rs-"]:bef
     -moz-osx-font-smoothing: grayscale;
 }
 
+i.fa-envelope:before {
+    color: #fbaf32;
+    /* margin-left: 20px; */
+    content: "\f0e0";
+}
+
+.fa-map-marker-alt:before {
+    color: #fbaf32;
+    content: "\f3c5";
+}
+
 i.fa-chevron-down:before {
     color: white;
     margin-left: 20px;
@@ -178,12 +189,6 @@ i.fa-mobile-alt:before {
     color: white;
     margin-left: 20px;
     content: "\f3cd";
-}
-
-i.fa-envelope:before {
-    color: white;
-    margin-left: 20px;
-    content: "\f0e0";
 }
 
 i.fa-user:before {
@@ -445,6 +450,11 @@ div#sdk h2 {
 }
 
 @media (min-width: 992px) {
+    i.fi.fi-rr-ticket.code-primary {
+        position: absolute;
+        margin-left: -91.3%;
+        margin-top: 13px;
+    }
     .navbar {
         position: absolute;
         width: 100%;
@@ -470,7 +480,7 @@ div#sdk h2 {
     .navbar-light .navbar-nav .nav-link:focus {
         padding: 10px 10px 8px 10px;
         font-family: 'Nunito', sans-serif;
-        color: #ffffff;
+        color: black;
         font-size: 18px;
         font-weight: 600;
     }
@@ -1630,53 +1640,6 @@ picture img {
     transition: .5s;
 }
 
-h2.h2 {
-    font-size: 2rem;
-    position: absolute;
-    margin-top: -18px;
-}
-
-h2.h2.main {
-    color: white;
-    text-shadow: 
-    -2px -1px 0 #fbaf32,
-    1px -1px 0 #fbaf32,
-    1px 1px 0 #fbaf32,
-    -1px 1px 0 #fbaf32;
-}
-
-h2.h2.wave {
-    color: #09f;
-    animation: wave 3s ease-in-out infinite;
-}
-
-@keyframes wave {
-    0%, 100% {
-        clip-path: polygon(
-            0% 47%,
-            10% 48%,
-            33% 54%,
-            54% 60%,
-            70% 61%,
-            84% 59%,
-            100% 100%,
-            0% 100%
-        );
-    }
-
-    50% {
-        clip-path: polygon(
-            0% 47%,
-            15% 65%,
-            34% 66%,
-            51% 62%,
-            84% 45%,
-            100% 46%,
-            100% 100%,
-            0% 100%
-        );
-    }
-}
 
 #btn-ite:hover {
     color: #fbaf32;

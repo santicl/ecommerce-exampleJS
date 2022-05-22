@@ -50,7 +50,7 @@ function readOutsideOrInsideTour() {
                         </div>
                         <h4>$ ${newPrice}</h4>
                         <button id="add${id}" onclick="add('${id}')" class="button-add">Agregar</button>
-                        <button style="visibility: hidden" id="${id}" onclick="deleteItem('${id}')" class="button-delete">Quitar</button>
+                        <button style="visibility: hidden" id="${id}" onclick="deleteItem('${id}')" class="button-add">Quitar</button>
                     </div>`
                     }
                 }
