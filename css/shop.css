@@ -1,5 +1,6 @@
 body {
     margin: 0px;
+    padding: 0;
 
 }
 
@@ -132,6 +133,10 @@ button {
     position: absolute;
     right: 15px;
     bottom: 10px;
+}
+
+.container-code {
+    margin-bottom: 20px;
 }
   
 .button-delete:hover {
