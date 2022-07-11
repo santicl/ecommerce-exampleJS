@@ -138,7 +138,6 @@ function rankStar() {
             for (let r = 0; r < rank; r++) {
                 container.innerHTML += `<i class="fi fi-sr-star"></i>`;
             }
-            console.log(container);
         }
     }
 }

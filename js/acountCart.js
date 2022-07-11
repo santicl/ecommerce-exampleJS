@@ -21,7 +21,6 @@ function readOutsideOrInsideTour() {
                 for (let i = 0; i < data.length; i++) {
                     let { type, price } = data[i];
                     let newPrice = new Intl.NumberFormat('es-ES').format(price);
-                    console.log(newPrice);
                     if (type === 'outside') {
                         showOutside += showCarts(getDataTour(data[i]), newPrice);
                     } else {
@@ -65,7 +64,6 @@ function add(id) {
     let dataCarts = [], data = [], b = document.getElementById("checkoutB");;
     cart = id;
     for (let i = 0; i < totalCarts.length; i++) {
-        console.log(totalCarts[i].id)
         if (totalCarts[i].id == cart) {
             dataCarts.push(totalCarts[i]);
             dataCarts = JSON.stringify(dataCarts);
@@ -109,7 +107,6 @@ function deleteItem(id) {
                 dataTotal.splice(i, 1);
             }
         }
-        console.log(dataTotal);
     });
     localStorage.setItem("Invoices", JSON.stringify(dataTotal));
     readOutsideOrInsideTour();

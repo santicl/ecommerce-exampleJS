@@ -12,7 +12,6 @@ export const showCarts = (tour, newPrice) => {
 }
 
 export const verifyContentStorage = () => {
-    console.log("entro en verify");
     for (let i = 0; i < localStorage.length; i++) {
         let key = localStorage.key(i);
         let value = localStorage.getItem(key);
@@ -23,7 +22,6 @@ export const verifyContentStorage = () => {
                 value[j].map(tour => {
                     const { id } = tour;
                     const idBtn = id + "quip";
-                    console.log(idBtn);
                     document.getElementById(idBtn).style.visibility = "hidden";
                     document.getElementById(id).style.visibility = "visible";
                     document.getElementById(id).style.position = "absolute";
@@ -88,7 +86,6 @@ export const API_WapSend = () => {
         let tours = getTours();
 
         const API = 'https://api.whatsapp.com/send?phone=573162421339&text=Hola%20%F0%9F%98%8A%2C%20mi%20nombre%20es%20' + name + '%20deseo%20reservar%20uno%20o%20varios%20tures%20como%20' + tours + '%2C%20en%20la%20hora%20y%20fecha%20' + hourLocal + ' ' + date + '%20%2C%20para%20' + numberPerson + '%2C%20quisiera%20mas%20informaci%C3%B3n';
-        console.log(API);
         window.location.href = API;
 }
 
