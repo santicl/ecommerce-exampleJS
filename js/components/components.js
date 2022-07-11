@@ -79,3 +79,28 @@ export const btnPay = () => {
         b.style.visibility = "hidden";
     }
 }
+
+export const API_WapSend = () => {
+        let name = document.getElementById("name").value;
+        let date = document.getElementById("date-tour").value;
+        let hourLocal = document.getElementById("hour-local").value;
+        let numberPerson = document.getElementById("number-persons").value;
+        let tours = getTours();
+
+        const API = 'https://api.whatsapp.com/send?phone=573162421339&text=Hola%20%F0%9F%98%8A%2C%20mi%20nombre%20es%20' + name + '%20deseo%20reservar%20uno%20o%20varios%20tures%20como%20' + tours + '%2C%20en%20la%20hora%20y%20fecha%20' + hourLocal + ' ' + date + '%20%2C%20para%20' + numberPerson + '%2C%20quisiera%20mas%20informaci%C3%B3n';
+        console.log(API);
+        window.location.href = API;
+}
+
+const getTours = () => {
+    let data = " ";
+    let tour = JSON.parse(localStorage.getItem("Invoices"));
+    for (let i = 0; i < tour.length; i++) {
+        tour[i] = JSON.parse(tour[i]);
+        for (let j = 0; j < tour[i].length; j++) {
+            const { title } = tour[i][j];
+        data += title + ", ";
+        }
+    }
+    return data;
+}

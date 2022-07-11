@@ -1,4 +1,4 @@
-import { sumTotal } from "./components/components.js";
+import { sumTotal, API_WapSend } from "./components/components.js";
 
 window.onload = readCheckout;
 readCheckout.onload = productNull;
@@ -6,9 +6,9 @@ readCheckout.ready = totalCheckout;
 readCheckout.ready = showProducts;
 readCheckout.ready = rankStar;
 
-const url = 'https://api-tours-default-rtdb.firebaseio.com/tours.json';
-
 let acountTotal = [];
+
+const url = 'https://api-tours-default-rtdb.firebaseio.com/tours.json';
 
 function readCheckout() {
     if ((window.location.href === 'http://localhost/paginaTours/tours/checkout.html') || (window.location.href === 'https://toursopen.netlify.app/checkout.html')) {
@@ -42,6 +42,7 @@ function readCheckout() {
         let input = document.getElementById("content-input__title").value = title;
         totalCheckout();
     }
+    
     showProducts();
     rankStar();
 }
@@ -144,3 +145,8 @@ function rankStar() {
 
 readCheckout();
 totalCheckout();
+
+document.getElementById("btnCheck").addEventListener("click", function (e) {
+    e.preventDefault();
+    API_WapSend();
+})

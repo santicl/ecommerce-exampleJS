@@ -78,7 +78,7 @@
                         <div data-aos="zoom-out" data-aos-delay="200" class="container_product text-center" id="container_product">
                             <div>
                                 <div class="booking-form">
-                                    <form id="form" netlify>
+                                    <form id="form">
                                         <div class="control-group">
                                             <div id="content-input" class="input-group">
                                                 <div id="products" class="form-control"></div>
@@ -92,7 +92,7 @@
                                         </div>
                                         <div class="control-group">
                                             <div class="input-group">
-                                                <input name="Nombre" type="text" class="form-control"
+                                                <input id="name" name="Nombre" type="text" class="form-control"
                                                     placeholder="Nombre" required="required" />
                                                 <div class="input-group-append">
                                                     <div class="input-group-text"><i class="fi fi-rs-user"></i></div>
@@ -101,7 +101,7 @@
                                         </div>
                                         <div class="control-group">
                                             <div class="input-group">
-                                                <input name="Email" type="email" class="form-control"
+                                                <input id="email" name="Email" type="email" class="form-control"
                                                     placeholder="Correo" required="required" />
                                                 <div class="input-group-append">
                                                     <div class="input-group-text"><i class="fi fi-rr-envelope"></i>
@@ -111,7 +111,7 @@
                                         </div>
                                         <div class="control-group">
                                             <div class="input-group">
-                                                <input name="Cel" type="tel" class="form-control" placeholder="Cel"
+                                                <input id="tel" name="Cel" type="tel" class="form-control" placeholder="Cel"
                                                     required="required" />
                                                 <div class="input-group-append">
                                                     <div class="input-group-text"><i class="fi fi-rr-smartphone"></i>
@@ -121,7 +121,7 @@
                                         </div>
                                         <div class="control-group">
                                             <div class="input-group date" id="date" data-target-input="nearest">
-                                                <input name="Fecha" type="text"
+                                                <input id="date-tour" name="Fecha" type="text"
                                                     class="form-control datetimepicker-input" placeholder="Fecha"
                                                     data-target="#date" data-toggle="datetimepicker" />
                                                 <div class="input-group-append" data-target="#date"
@@ -133,7 +133,7 @@
                                         </div>
                                         <div class="control-group">
                                             <div class="input-group time" id="time" data-target-input="nearest">
-                                                <input name="Hora" type="text" class="form-control datetimepicker-input"
+                                                <input id="hour-local" name="Hora" type="text" class="form-control datetimepicker-input"
                                                     placeholder="Hora" data-target="#time"
                                                     data-toggle="datetimepicker" />
                                                 <div class="input-group-append" data-target="#time"
@@ -145,7 +145,7 @@
                                         </div>
                                         <div class="control-group">
                                             <div class="input-group">
-                                                <select name="Numero de personas" class="custom-select form-control">
+                                                <select id="number-persons" name="Numero de personas" class="custom-select form-control">
                                                     <option selected>Numero de personas</option>
                                                     <option value="1">1 Persona</option>
                                                     <option value="2">2 Persona</option>
