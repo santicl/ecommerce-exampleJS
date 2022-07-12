@@ -1,5 +1,7 @@
 import { sumTotal, API_WapSend } from "./components/components.js";
 
+var sumCarts = 0;
+
 window.onload = readCheckout;
 readCheckout.onload = productNull;
 readCheckout.ready = totalCheckout;
@@ -40,17 +42,17 @@ function readCheckout() {
 
         }
         let input = document.getElementById("content-input__title").value = title;
-        totalCheckout();
     }
 
     showProducts();
     rankStar();
 }
 
-function totalCheckout() {
+function totalCheckout(sumCarts) {
     let suma = sumTotal();
+    document.getElementById("code").value = "";
     document.getElementById("sub").innerHTML = `<h3> $ ${new Intl.NumberFormat('es-ES').format(suma.suma)}</h3>`;
-    document.getElementById("iva").innerHTML = `<h3> $ ${new Intl.NumberFormat('es-ES').format(0)}</h3>`;
+    document.getElementById("discount").innerHTML = `<h3>- $ ${new Intl.NumberFormat('es-ES').format(sumCarts)}</h3>`;
     document.getElementById("total").innerHTML = `<h3> $ ${new Intl.NumberFormat('es-ES').format(suma.suma)}</h3>`;
 
 }
@@ -82,7 +84,6 @@ function dele(id) {
     localStorage.setItem("Invoices", JSON.stringify(dataTotal));
     readCheckout();
     productNull();
-    totalCheckout();
 }
 
 
@@ -143,7 +144,7 @@ function rankStar() {
 }
 
 readCheckout();
-totalCheckout();
+totalCheckout(sumCarts);
 
 document.getElementById("btnCheck").addEventListener("click", function (e) {
     e.preventDefault();
@@ -159,13 +160,15 @@ document.getElementById("code-apply").addEventListener("click", function () {
 
 const getDescount = (code, tour, data) => {
     let tours = [];
+    let sumPorcent;
     if (code === "3212") {
         for (let i = 0; i < tour.length; i++) {
             tour[i] = JSON.parse(tour[i]);
-            console.log(tour[i]);
             for (let j = 0; j < tour[i].length; j++) {
                 if (tour[i][j].des === false) {
-                    tour[i][j].price = tour[i][j].price - (tour[i][j].price * 0.10);
+                    sumPorcent = tour[i][j].price * 0.10;
+                    sumCarts = sumCarts + sumPorcent;
+                    tour[i][j].price = tour[i][j].price - sumPorcent;
                     tour[i][j].des = true;
                     tour[i] = JSON.stringify(tour[i]);
                     data = tour[i];
@@ -184,26 +187,11 @@ const getDescount = (code, tour, data) => {
     } else {
         alert("Código no válido");
     }
-    window.location.reload();
+    //window.location.reload();
+    totalCheckout(sumCarts);
 }
 
-const getDescounts = (code, tour, data) => {
-    if (code === "3212") {
-        for (let i = 0; i < tour.length; i++) {
-            tour[i] = JSON.parse(tour[i]);
-            console.log(tour[i]);
-            for (let j = 0; j < tour[i].length; j++) {
-                tour[i][j].price = tour[i][j].price - (tour[i][j].price * 0.10);
-                tour[i][j].des = true;
-                tour[i] = JSON.stringify(tour[i]);
-                data = tour[i];
-                let tours = [];
-                tours.push(data);
-                localStorage.setItem("Invoices", JSON.stringify(tours));
-                window.location.reload();
-            }
-        }
-    } else {
-        alert("Código no válido");
-    }
+window.onbeforeunload = function () {
+    localStorage.clear();
+    return "¿Estás seguro de que quieres salir?";
 }
