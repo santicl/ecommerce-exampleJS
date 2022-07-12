@@ -37,7 +37,7 @@ export const getDataTour = (value) => {
     return tour;
 }
 
-export const sumTotal = () => {
+export const sumTotal = () => { //aqui se puede hacer el descuento del 10%
     let invoices = JSON.parse(localStorage.getItem("Invoices"));
     let suma = 0, porcent = 0, sumAndPorcent = {};
     

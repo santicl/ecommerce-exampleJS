@@ -50,8 +50,8 @@ function readCheckout() {
 function totalCheckout() {
     let suma = sumTotal();
     document.getElementById("sub").innerHTML = `<h3> $ ${new Intl.NumberFormat('es-ES').format(suma.suma)}</h3>`;
-    document.getElementById("iva").innerHTML = `<h3> $ ${new Intl.NumberFormat('es-ES').format(suma.porcent)}</h3>`;
-    document.getElementById("total").innerHTML = `<h3> $ ${new Intl.NumberFormat('es-ES').format(suma.suma + suma.porcent)}</h3>`;
+    document.getElementById("iva").innerHTML = `<h3> $ ${new Intl.NumberFormat('es-ES').format(0)}</h3>`;
+    document.getElementById("total").innerHTML = `<h3> $ ${new Intl.NumberFormat('es-ES').format(suma.suma)}</h3>`;
 
 }
 
@@ -158,6 +158,36 @@ document.getElementById("code-apply").addEventListener("click", function () {
 });
 
 const getDescount = (code, tour, data) => {
+    let tours = [];
+    if (code === "3212") {
+        for (let i = 0; i < tour.length; i++) {
+            tour[i] = JSON.parse(tour[i]);
+            console.log(tour[i]);
+            for (let j = 0; j < tour[i].length; j++) {
+                if (tour[i][j].des === false) {
+                    tour[i][j].price = tour[i][j].price - (tour[i][j].price * 0.10);
+                    tour[i][j].des = true;
+                    tour[i] = JSON.stringify(tour[i]);
+                    data = tour[i];
+                    tours.push(data);
+                    localStorage.setItem("Invoices", JSON.stringify(tours));
+                }
+                if (tour[i][j].des === true) {
+                    alert("El código ya fue aplicado a: " + tour[i][j].title);
+                    tour[i] = JSON.stringify(tour[i]);
+                    data = tour[i];
+                    tours.push(data);
+                    localStorage.setItem("Invoices", JSON.stringify(tours));                    
+                }
+            }
+        }
+    } else {
+        alert("Código no válido");
+    }
+    window.location.reload();
+}
+
+const getDescounts = (code, tour, data) => {
     if (code === "3212") {
         for (let i = 0; i < tour.length; i++) {
             tour[i] = JSON.parse(tour[i]);
