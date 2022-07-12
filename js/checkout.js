@@ -165,12 +165,12 @@ const getDescount = (code, tour, data) => {
             for (let j = 0; j < tour[i].length; j++) {
                 tour[i][j].price = tour[i][j].price - (tour[i][j].price * 0.10);
                 tour[i][j].des = true;
-                alert(tour[i][j].price, tour[i][j].des);
                 tour[i] = JSON.stringify(tour[i]);
                 data = tour[i];
                 let tours = [];
                 tours.push(data);
                 localStorage.setItem("Invoices", JSON.stringify(tours));
+                window.location.reload();
             }
         }
     } else {
