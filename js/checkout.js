@@ -42,7 +42,7 @@ function readCheckout() {
         let input = document.getElementById("content-input__title").value = title;
         totalCheckout();
     }
-    
+
     showProducts();
     rankStar();
 }
@@ -100,7 +100,7 @@ function showProducts() {
                 if (localStorage.length > 1) {
                     console.log(value);
                 }
-              b.innerHTML += `<div class="container-span"><span class="span-title">${product.title}<div class="i-dele"><i onclick="dele('${product.id}')" id="delete" class="fi fi-rr-cross-circle"></i></div><span></div>`
+                b.innerHTML += `<div class="container-span"><span class="span-title">${product.title}<div class="i-dele"><i onclick="dele('${product.id}')" id="delete" class="fi fi-rr-cross-circle"></i></div><span></div>`
             })
         })
     }
@@ -148,4 +148,32 @@ totalCheckout();
 document.getElementById("btnCheck").addEventListener("click", function (e) {
     e.preventDefault();
     API_WapSend();
-})
+});
+
+document.getElementById("code-apply").addEventListener("click", function () {
+    let code = document.getElementById("code").value;
+    let tour = JSON.parse(localStorage.getItem("Invoices"));
+    let data;
+    getDescount(code, tour, data);
+});
+
+const getDescount = (code, tour, data) => {
+    if (code === "3212") {
+        for (let i = 0; i < tour.length; i++) {
+            tour[i] = JSON.parse(tour[i]);
+            console.log(tour[i]);
+            for (let j = 0; j < tour[i].length; j++) {
+                tour[i][j].price = tour[i][j].price - (tour[i][j].price * 0.10);
+                tour[i][j].des = true;
+                alert(tour[i][j].price, tour[i][j].des);
+                tour[i] = JSON.stringify(tour[i]);
+                data = tour[i];
+                let tours = [];
+                tours.push(data);
+                localStorage.setItem("Invoices", JSON.stringify(tours));
+            }
+        }
+    } else {
+        alert("Código no válido");
+    }
+}
