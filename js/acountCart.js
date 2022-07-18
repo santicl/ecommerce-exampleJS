@@ -1,4 +1,4 @@
-import { showCarts, getDataTour, btnPay, sumTotal } from "./components/components.js";
+import { showCarts, getDataTour, btnPay, sumTotal, verifyBtnRemove } from "./components/components.js";
 
 let totalSum = 0, total = 0, totalCarts = [];
 var cart;
@@ -10,6 +10,7 @@ if ((window.location.href === 'http://localhost/paginaTours/tours/shop.html') ||
 }
 
 readOutsideOrInsideTour.onload = returnItemDescription;
+readOutsideOrInsideTour.onload = verifyBtnRemove;
 
 function readOutsideOrInsideTour() {
     let showOutside = '', showInside = '';
@@ -29,6 +30,7 @@ function readOutsideOrInsideTour() {
                 }
                 document.getElementById("content_product").innerHTML = showOutside;
                 document.getElementById("carousel__container_content_product").innerHTML = showInside;
+                verifyBtnRemove();
             } catch (error) {
                 console.log(error);
             }
@@ -88,26 +90,5 @@ function add(id) {
 
     totalSum = new Intl.NumberFormat('es-ES').format(total.suma);
     document.getElementById("checkoutB").innerHTML = `Pagar $${totalSum}`;
-}
-
-function deleteItem(id) {
-    let dataTotal = [];
-    let invoices = JSON.parse(localStorage.getItem("Invoices"));
-    let idCart = id;
-    invoices.map(function (item) {
-        item = JSON.parse(item);
-        for (let i = 0; i < item.length; i++) {
-            if (item[i].id == idCart) {
-                item.splice(i, 1);
-            }
-        }
-        dataTotal.push(JSON.stringify(item));
-        for (let i = 0; i < dataTotal.length; i++) {
-            if (dataTotal[i] === "[]" || dataTotal[i] === null) {
-                dataTotal.splice(i, 1);
-            }
-        }
-    });
-    localStorage.setItem("Invoices", JSON.stringify(dataTotal));
-    readOutsideOrInsideTour();
+    verifyBtnRemove();
 }

@@ -88,9 +88,8 @@ function dele(id) {
 
 
 function showProducts() {
-    let b = document.getElementById("products");
-    b.innerHTML = '';
-    let v;
+    let productContainer = document.getElementById("products");
+    productContainer.innerHTML = '';
     for (let i = 0; i < localStorage.length; i++) {
         let key = localStorage.key(i);
         let value = localStorage.getItem(key);
@@ -101,7 +100,7 @@ function showProducts() {
                 if (localStorage.length > 1) {
                     console.log(value);
                 }
-                b.innerHTML += `<div class="container-span"><span class="span-title">${product.title}<div class="i-dele"><i onclick="dele('${product.id}')" id="delete" class="fi fi-rr-cross-circle"></i></div><span></div>`
+                productContainer.innerHTML += `<div class="container-span"><span class="span-title">${product.title}<div class="i-dele"><i onclick="dele('${product.id}')" id="delete" class="fi fi-rr-cross-circle"></i></div><span></div>`
             })
         })
     }

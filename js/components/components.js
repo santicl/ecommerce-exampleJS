@@ -1,4 +1,5 @@
 export const showCarts = (tour, newPrice) => {
+    console.log("showcarts");
     return `<div id="div" class="product-container">
     <h3>${tour.title}</h3>
     <img src="img/${tour.img}" />
@@ -6,9 +7,86 @@ export const showCarts = (tour, newPrice) => {
       <div id="${tour.title}"></div>
     </div>
     <h4>$ ${newPrice}</h4>
+    <div id="${tour.id}-${tour.title}">
     <button id="${tour.id}" class="button-add">Agregar</button>
-    <button style="visibility: hidden" id="${tour.id}" onclick="deleteItem('${tour.id}')" class="button-delete">Quitar</button>
+    </div>
 </div>`;
+}
+
+export const verifyBtnRemove = () => {
+    let btnState = true;
+    let dataContent = {};
+    let tour = JSON.parse(localStorage.getItem("Invoices"));
+    for (let i = 0; i < tour.length; i++) {
+        tour[i] = JSON.parse(tour[i]);
+        for (let j = 0; j < tour[i].length; j++) {
+            const { id, title } = tour[i][j];
+            dataContent = { btnState, id, title };
+            let IDChange = getIdTransform(dataContent);
+            console.log(document.getElementById(IDChange));
+            document.getElementById(IDChange).innerHTML = `<button id="${id}" class="button-remove">Quitar</button>`;
+        }
+    }
+    arrayElementsByBtn();
+}
+
+const arrayElementsByBtn = () => {
+    let btns = document.getElementsByClassName("button-remove");
+    for (const el of btns) {
+        el.addEventListener('click', (e) => {
+            modifyClassName(e.target.id);
+            deleteItem(e.target.id);
+        })
+    }
+}
+
+const getIdTransform = (dataContent) => {
+    let ID;
+    if (dataContent.btnState === true) {
+        ID = dataContent.id + "-" + dataContent.title;
+    }
+    if (dataContent.btnState === false) {
+        ID = dataContent.title + "-" + dataContent.id;
+    }
+    return ID;
+}
+
+const deleteItem = (ID) => {
+    console.log("delete");
+    let dataTotal = [];
+    let invoices = JSON.parse(localStorage.getItem("Invoices"));
+    invoices.map(function (item) {
+        item = JSON.parse(item);
+        for (let i = 0; i < item.length; i++) {
+            const { id, title } = item[i];
+            if (id == ID) {
+                console.log(ID);
+                item.splice(i, 1);
+            }
+        }
+        dataTotal.push(JSON.stringify(item));
+        for (let i = 0; i < dataTotal.length; i++) {
+            if (dataTotal[i] === "[]" || dataTotal[i] === null) {
+                dataTotal.splice(i, 1);
+            }
+        }
+    });
+    localStorage.setItem("Invoices", JSON.stringify(dataTotal));
+    btnPay();
+}
+
+const modifyClassName = (idBtn) => {
+    let tour = JSON.parse(localStorage.getItem("Invoices"));
+    for (let i = 0; i < tour.length; i++) {
+        tour[i] = JSON.parse(tour[i]);
+        console.log(tour[i]);
+        for (let j = 0; j < tour[i].length; j++) {
+            const { id, title } = tour[i][j];
+            if (id == idBtn) {
+                document.getElementById(id + "-" + title).innerHTML = `<button id="${id}" class="button-add">Agregar</button>`;
+            }
+        }
+    }
 }
 
 export const verifyContentStorage = () => {
@@ -40,7 +118,7 @@ export const getDataTour = (value) => {
 export const sumTotal = () => { //aqui se puede hacer el descuento del 10%
     let invoices = JSON.parse(localStorage.getItem("Invoices"));
     let suma = 0, porcent = 0, sumAndPorcent = {};
-    
+
     for (let i = 0; i < invoices.length; i++) {
         invoices[i] = JSON.parse(invoices[i]);
         for (let j = 0; j < invoices[i].length; j++) {
@@ -79,14 +157,14 @@ export const btnPay = () => {
 }
 
 export const API_WapSend = () => {
-        let name = document.getElementById("name").value;
-        let date = document.getElementById("date-tour").value;
-        let hourLocal = document.getElementById("hour-local").value;
-        let numberPerson = document.getElementById("number-persons").value;
-        let tours = getTours();
+    let name = document.getElementById("name").value;
+    let date = document.getElementById("date-tour").value;
+    let hourLocal = document.getElementById("hour-local").value;
+    let numberPerson = document.getElementById("number-persons").value;
+    let tours = getTours();
 
-        const API = 'https://api.whatsapp.com/send?phone=573162421339&text=Hola%20%F0%9F%98%8A%2C%20mi%20nombre%20es%20' + name + '%20deseo%20reservar%20uno%20o%20varios%20tures%20como%20' + tours + '%2C%20en%20la%20hora%20y%20fecha%20' + hourLocal + ' ' + date + '%20%2C%20para%20' + numberPerson + '%2C%20quisiera%20mas%20informaci%C3%B3n';
-        window.location.href = API;
+    const API = 'https://api.whatsapp.com/send?phone=573162421339&text=Hola%20%F0%9F%98%8A%2C%20mi%20nombre%20es%20' + name + '%20deseo%20reservar%20uno%20o%20varios%20tures%20como%20' + tours + '%2C%20en%20la%20hora%20y%20fecha%20' + hourLocal + ' ' + date + '%20%2C%20para%20' + numberPerson + '%2C%20quisiera%20mas%20informaci%C3%B3n';
+    window.location.href = API;
 }
 
 const getTours = () => {
@@ -96,7 +174,7 @@ const getTours = () => {
         tour[i] = JSON.parse(tour[i]);
         for (let j = 0; j < tour[i].length; j++) {
             const { title } = tour[i][j];
-        data += title + ", ";
+            data += title + ", ";
         }
     }
     return data;
