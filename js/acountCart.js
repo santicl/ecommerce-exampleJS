@@ -5,7 +5,7 @@ var cart;
 
 const URL = 'https://api-tours-default-rtdb.firebaseio.com/tours.json';
 
-if ((window.location.href === 'http://localhost/paginaTours/tours/shop.html') || (window.location.href === 'https://toursopen.netlify.app/shop.html')) {
+if ((window.location.href === 'http://localhost/paginaTours/tours/') || (window.location.href === 'https://toursopen.netlify.app/' || window.location.href === 'https://toursopen.netlify.app/index.html' || window.location.href === 'http://localhost/paginaTours/tours/index.html')) {
     window.onload = readOutsideOrInsideTour;
 }
 
