@@ -13,7 +13,7 @@ readOutsideOrInsideTour.onload = returnItemDescription;
 readOutsideOrInsideTour.onload = verifyBtnRemove;
 
 function readOutsideOrInsideTour() {
-    //localStorage.clear();
+    localStorage.clear();
     let showOutside = '', showInside = '';
     fetch(URL)
         .then(response => response.json())
