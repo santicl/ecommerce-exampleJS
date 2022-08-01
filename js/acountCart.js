@@ -71,7 +71,7 @@ function returnItemDescription() {
                 container = document.getElementById(title);
                 container.innerHTML = '';
                 for (let j = 0; j < include.length; j++) {
-                    container.innerHTML += `<li class="list"><i class="fi fi-br-shield-check"></i> ${include[j]}</li><br>`;
+                    container.innerHTML += `<li class="list"><i class="bi bi-check2-circle"></i> ${include[j]}</li><br>`;
                 }
             }
         })

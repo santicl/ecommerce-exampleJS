@@ -79,6 +79,10 @@ i[class^="fi-br-"]:before, i[class*=" fi-br-"]:before, span[class^="fi-br-"]:bef
     -moz-osx-font-smoothing: grayscale;
 }
 
+i[class*="bi-check2"]::before {
+    color: #fbaf32;
+}
+
 .btn-i {
     width: 15px;
     height: 15px;
