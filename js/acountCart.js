@@ -1,9 +1,29 @@
 import { showCarts, getDataTour, btnPay, sumTotal, verifyBtnRemove } from "./components/components.js";
+import { arrayBtnItems } from "./components/components.js";
+//import { initializeApp } from "https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js";
+//import { getDatabase } from "https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js";
+
+// CONFIG FIREBASE
+//const firebaseConfig = {
+//    apiKey: "AIzaSyAYzSPpwPVcQRyv7J7zNbGCFFW_QUc6cKA",
+//    authDomain: "bd-api-data.firebaseapp.com",
+//    databaseURL: "https://bd-api-data-default-rtdb.firebaseio.com",
+//    projectId: "bd-api-data",
+//    storageBucket: "bd-api-data.appspot.com",
+//    messagingSenderId: "137490408138",
+//    appId: "1:137490408138:web:7a05a9d61728c712bbca33",
+//    measurementId: "G-HS1VJ4SR1G"
+//};
+
+//Firebase
+//const app = initializeApp(firebaseConfig);
+//const db = getDatabase(app);
+
+// API TOURS
+const URL = 'https://api-tours-default-rtdb.firebaseio.com/tours.json';
 
 let totalSum = 0, total = 0, totalCarts = [];
 var cart;
-
-const URL = 'https://api-tours-default-rtdb.firebaseio.com/tours.json';
 
 if ((window.location.href === 'http://localhost/paginaTours/tours/') || (window.location.href === 'https://toursopen.netlify.app/' || window.location.href === 'https://toursopen.netlify.app/index.html' || window.location.href === 'http://localhost/paginaTours/tours/index.html')) {
     window.onload = readOutsideOrInsideTour;

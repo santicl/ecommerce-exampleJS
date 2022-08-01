@@ -28,6 +28,7 @@ export const verifyBtnRemove = () => {
         }
     }
     arrayElementsByBtn();
+    arrayBtnItems();
 }
 
 const arrayElementsByBtn = () => {
@@ -178,4 +179,30 @@ const getTours = () => {
         }
     }
     return data;
+}
+
+const getItems = (data, idData) => {
+    let newData;
+    for (let i = 0; i < data.length; i++) {
+        data[i] = JSON.parse(data[i]);
+        for (let j = 0; j < data[i].length; j++) {
+            const { id } = data[i][j];
+            if (id === idData) {
+                newData = data[i][j];
+            }
+        }
+    }
+    return newData;
+}
+
+export const arrayBtnItems = () => {
+    let btnAdd = document.getElementsByClassName("button-add");
+    for (const el of btnAdd) {
+        el.addEventListener('click', (e) => {
+            // getID for set to API Firebase.
+            let tour = JSON.parse(localStorage.getItem("Invoices"));
+            let getTour = getItems(tour, e.target.id);
+            console.log(getTour);
+        })
+    }
 }
