@@ -100,7 +100,7 @@ function showProducts() {
                 if (localStorage.length > 1) {
                     console.log(value);
                 }
-                productContainer.innerHTML += `<div class="container-span"><span class="span-title">${product.title}<div class="i-dele"><i onclick="dele('${product.id}')" id="delete" class="fi fi-rr-cross-circle"></i></div><span></div>`
+                productContainer.innerHTML += `<div class="container-span"><span class="span-title">${product.title}<div class="i-dele"><i onclick="dele('${product.id}')" id="delete" class="bi bi-trash-fill"></i></div><span></div>`
             })
         })
     }
@@ -136,7 +136,7 @@ function rankStar() {
             container = document.getElementById(id);
             container.innerHTML = '';
             for (let r = 0; r < rank; r++) {
-                container.innerHTML += `<i class="fi fi-sr-star"></i>`;
+                container.innerHTML += `<i class="bi bi-star-fill"></i>`;
             }
         }
     }
@@ -179,7 +179,7 @@ const getDescount = (code, tour, data) => {
                     tour[i] = JSON.stringify(tour[i]);
                     data = tour[i];
                     tours.push(data);
-                    localStorage.setItem("Invoices", JSON.stringify(tours));                    
+                    localStorage.setItem("Invoices", JSON.stringify(tours));
                 }
             }
         }
@@ -193,4 +193,24 @@ const getDescount = (code, tour, data) => {
 window.onbeforeunload = function () {
     localStorage.clear();
     return "¿Estás seguro de que quieres salir?";
+}
+
+function verifyContent() {
+    let content = JSON.parse(localStorage.getItem("Invoices"));
+    if (content === null) {
+        document.getElementById("container_all").innerHTML = showNull();
+    } else if(content !== null) {
+        readCheckout();
+    }
+}
+
+function showNull() {
+    return `
+    <div id="content_product_null" class="page-content">
+        <div class="container-btn-shop text-center">
+            <img class="img_cart" src="img/cart.jpg" alt="" loading="lazy">
+            <a href="index.html" class="btn custom-btn">Comprar en la tienda</a>
+        </div>
+    </div>
+    `;
 }

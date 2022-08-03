@@ -79,6 +79,63 @@ i[class^="fi-br-"]:before, i[class*=" fi-br-"]:before, span[class^="fi-br-"]:bef
     -moz-osx-font-smoothing: grayscale;
 }
 
+.bi-arrow-up::before {
+    margin-top: 10px;
+    content: "\f148";
+}
+
+.bi-ticket-perforated-fill::before {
+    content: "\f6c9";
+    position: absolute;
+    color: #fbaf32;
+    margin-left: -354px;
+    margin-top: 15px;
+}
+
+.bi-chevron-down::before {
+    color: #fbaf32;
+    content: "\f282";
+}
+
+.bi-alarm::before {
+    color: #fbaf32;
+    content: "\f102";
+}
+
+.bi-calendar4-week::before {
+    color: #fbaf32;
+    content: "\f217";
+}
+
+.bi-person::before {
+    color: #fbaf32;
+    content: "\f4e1";
+}
+
+.bi-shield-check::before {
+    color: #fbaf32;
+    content: "\f52f";
+}
+
+.bi-trash-fill::before {
+    font-size: 12px;
+    content: "\f5dd";
+    color: #fbaf32;
+    margin-top: -15px;
+}
+
+.bi-patch-question::before {
+    color: #fbaf32;
+    content: "\f4be";
+    font-size: 15px;
+    position: absolute;
+}
+
+i[class*="bi-star-fill"]::before {
+    color: #fbaf32;
+    margin-right: 5px;
+}
+
 i[class*="bi-check2"]::before {
     color: #fbaf32;
 }

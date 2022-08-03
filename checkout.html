@@ -39,6 +39,7 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="font/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
@@ -67,7 +68,7 @@
     <!-- Page Header Start -->
     <div id="page_pay">
         <div class="container">
-            <div class="row">
+            <div id="container_all" class="row">
                 <div class="col-12 text-center">
                     <h1 class="h1">Checkout</h1>
                 </div>
@@ -75,7 +76,8 @@
                 <div class="page-pro">
                     <div class="container">
                         <!-- Checkout Container Start -->
-                        <div data-aos="zoom-out" data-aos-delay="200" class="container_product text-center" id="container_product">
+                        <div data-aos="zoom-out" data-aos-delay="200" class="container_product text-center"
+                            id="container_product">
                             <div>
                                 <div class="booking-form">
                                     <form id="form">
@@ -86,7 +88,7 @@
                                                     id="content-input__title" type="text" />
                                                 <div class="input-group-append">
                                                     <div class="input-group-text"><i id="delete"
-                                                            class="fi fi-br-shield-check"></i></div>
+                                                            class="bi bi-shield-check"></i></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -95,7 +97,7 @@
                                                 <input id="name" name="Nombre" type="text" class="form-control"
                                                     placeholder="Nombre" required="required" />
                                                 <div class="input-group-append">
-                                                    <div class="input-group-text"><i class="fi fi-rs-user"></i></div>
+                                                    <div class="input-group-text"><i class="bi bi-person"></i></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -106,26 +108,27 @@
                                                     data-target="#date" data-toggle="datetimepicker" />
                                                 <div class="input-group-append" data-target="#date"
                                                     data-toggle="datetimepicker">
-                                                    <div class="input-group-text"><i class="fi fi-rs-calendar"></i>
+                                                    <div class="input-group-text"><i class="bi bi-calendar4-week"></i>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <div class="input-group time" id="time" data-target-input="nearest">
-                                                <input id="hour-local" name="Hora" type="text" class="form-control datetimepicker-input"
-                                                    placeholder="Hora" data-target="#time"
-                                                    data-toggle="datetimepicker" />
+                                                <input id="hour-local" name="Hora" type="text"
+                                                    class="form-control datetimepicker-input" placeholder="Hora"
+                                                    data-target="#time" data-toggle="datetimepicker" />
                                                 <div class="input-group-append" data-target="#time"
                                                     data-toggle="datetimepicker">
-                                                    <div class="input-group-text"><i class="fi fi-rr-time-check"></i>
+                                                    <div class="input-group-text"><i class="bi bi-alarm"></i>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <div class="input-group">
-                                                <select id="number-persons" name="Numero de personas" class="custom-select form-control">
+                                                <select id="number-persons" name="Numero de personas"
+                                                    class="custom-select form-control">
                                                     <option selected>Numero de personas</option>
                                                     <option value="1">1 Persona</option>
                                                     <option value="2">2 Persona</option>
@@ -139,13 +142,14 @@
                                                     <option value="10">10 Persona</option>
                                                 </select>
                                                 <div class="input-group-append">
-                                                    <div class="input-group-text"><i class="fi fi-rr-angle-down"></i>
+                                                    <div class="input-group-text"><i class="bi bi-chevron-down"></i>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div>
-                                            <button id="btnCheck" class="btn custom-btn" type="submit">Reserva por WhatsApp</button>
+                                            <button id="btnCheck" class="btn custom-btn" type="submit"><i class="bi bi-whatsapp"></i> Reserva por
+                                                WhatsApp</button>
                                         </div>
                                     </form>
                                 </div>
@@ -156,12 +160,12 @@
 
                             <div class="container-code">
                                 <input id="code" class="input-cody" type="number" placeholder="codigo descuento">
-                                <i class="fi fi-rr-ticket code-primary"></i>
+                                <i class="bi bi-ticket-perforated-fill code-primary"></i>
                                 <button id="code-apply" class="btn btn-primary">Aplicar</button>
                             </div>
 
 
-    <!-- Set up a container element for the button -->
+                            <!-- Set up a container element for the button -->
                             <div id="paypal-button-container"></div>
 
                             <!-- Total Checkout -->
@@ -177,11 +181,15 @@
                                 </div>
                                 <div class="container-total-iva">
                                     <div class="iva">
-                                        <h3>Descuento: <i id="info-iva" class="fi fi-rr-interrogation inte-info"></i></h3>
+                                        <h3>Descuento: <i id="info-iva" class="bi bi-patch-question inte-info"></i>
+                                        </h3>
                                     </div>
-                                    <div id="popup" style="visibility: hidden; position: absolute;" class="container-info">
-                                        <a class="btn-cerrar-popup"><i id="btn-cerrar-popup" class="fas fa-times closed"></i></a>
-                                        <p id="p" style="color: black;" class="paragraph-info">Obtén tu cupón con nuestros Hoteles aliados</p>
+                                    <div id="popup" style="visibility: hidden; position: absolute;"
+                                        class="container-info">
+                                        <a class="btn-cerrar-popup"><i id="btn-cerrar-popup"
+                                                class="fas fa-times closed"></i></a>
+                                        <p id="p" style="color: black;" class="paragraph-info">Obtén tu cupón con
+                                            nuestros Hoteles aliados</p>
                                     </div>
                                     <div id="discount" class="container-number">
                                         <h3>$ 0</h3>
@@ -201,9 +209,8 @@
 
                         <div id="content_product_null" class="page-content">
                             <div class="container-btn-shop text-center">
-                                <!--<h2 class="title_check">Aun no has elejido nada para comprar</h2>-->
                                 <img class="img_cart" src="img/cart.jpg" alt="" loading="lazy">
-                                <a href="index.html" class="btn custom-btn">Comprar en la tienda</a>
+                                <a href="index.html" class="btn custom-btn"><i class="bi bi-bag-plus"></i> Comprar en la tienda</a>
                             </div>
                         </div>
 
@@ -234,7 +241,8 @@
                                 <p><i class="fa fa-envelope"></i>touropeninfo@gmail.com</p>
                                 <div class="footer-social">
                                     <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://instagram.com/opentour_ctg?igshid=YmMyMTA2M2Y="><i class="fab fa-instagram"></i></a>
+                                    <a href="https://instagram.com/opentour_ctg?igshid=YmMyMTA2M2Y="><i
+                                            class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -264,7 +272,7 @@
     </div>
     <!-- Footer End -->
     <a id="checkoutB" onclick="pay()" href="shop.html">Pagar</a>
-    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <a href="#" class="back-to-top"><i class="bi bi-arrow-up"></i></a>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
