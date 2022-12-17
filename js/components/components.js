@@ -132,6 +132,12 @@ export const sumTotal = () => { //aqui se puede hacer el descuento del 10%
     return sumAndPorcent;
 }
 
+export const getSumaAsync = async (url) => {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+}
+
 export const btnPay = () => {
     let totalPrice = 0;
     let b = document.getElementById("checkoutB");

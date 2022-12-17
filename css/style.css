@@ -551,7 +551,7 @@ div#sdk h2 {
     .navbar-light .navbar-nav .nav-link:focus {
         padding: 10px 10px 8px 10px;
         font-family: 'Nunito', sans-serif;
-        color: black;
+        color: white;
         font-size: 18px;
         font-weight: 600;
     }
