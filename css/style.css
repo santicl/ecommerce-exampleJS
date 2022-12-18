@@ -659,10 +659,6 @@ div#sdk h2 {
     z-index: 2;
 }
 
-.transparent {
-    color: rgba(0, 0, 0, 0);
-}
-
 #checkoutB{
     visibility: hidden;
     padding: 12px 25px;
@@ -684,16 +680,20 @@ div#sdk h2 {
     z-index: 9;
 }
 
+.carousel .carousel-text .h1 span {
+    color: #fbaf32;
+}
+
+.carousel .carousel-text .h2 span {
+    color: #fbaf32;
+}
+
 .carousel .carousel-text .h2 {
     text-align: center;
     color: #ffffff;
     font-size: 60px;
     font-weight: 700;
     margin-bottom: 30px;
-}
-
-.carousel .carousel-text .h2 span {
-    color: #fbaf32;
 }
 
 .carousel .carousel-text p {
