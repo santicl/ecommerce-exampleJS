@@ -176,6 +176,18 @@ a:focus {
     transition: .5s;
 }
 
+.btn.access {
+    padding: 5px 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    background: #fbaf32;
+    border: 2px solid #fbaf32;
+    border-radius: 5px;
+    transition: .5s;
+}
+
 .content {
     position: absolute;
 }
@@ -348,6 +360,367 @@ i.fi.fi-rr-user {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+
+.Arrow-left-icon {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .Arrow-left-icon  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    top: calc(90px - 20px);
+    background-color: #000;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .Arrow-right-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .Arrow-right-icon button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    bottom: calc(90px - 20px);
+    background-color: #000;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .carrousel-item {
+    width: calc(100% / 12);
+    height: 170px;
+    background-color: rgb(238, 232, 232);
+    box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 17px;
+    transition: all 0.3s ease;
+  }
+  
+  .carrousel-item .Icon-category {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  
+  .carrousel-item .Icon-category svg {
+    width: 50px;
+    height: 50px;
+    color: rgb(44, 44, 44);
+  }
+  
+  .Info-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .Info-item h2 {
+    color: rgb(3, 3, 3);
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .promo-items {
+    cursor: pointer;
+  }
+  
+  /* PRODUCT STYLES END*/
+  
+  /* SHOW PRODUCTS STYLES */
+  
+  .Arrowa-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
+  
+  .Arrowa-buttons .Arrow-button-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(240, 169, 56);
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .Arrowa-buttons .Arrow-button-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(240, 169, 56);
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 50%;
+    margin-left: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .Flash-sales {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 50px;
+    padding: 10px;
+  }
+  
+  .Products-show-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 120px 0px;
+  }
+  
+  .flash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid rgb(218, 214, 214);
+    border-radius: 20px;
+  }
+  
+  .Product-section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+  
+  .Product-section-title h2 {
+    color: rgb(3, 3, 3);
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0 0 0 5px;
+  }
+
+.Container-products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    padding: 0 20px;
+    margin-top: 20px;
+  }
+  
+  .Counter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin-top: 20px;
+  }
+  
+  .Counter-days, .Counter-hours, .Counter-mins, .Counter-secs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .Counter-days div span, .Counter-hours div span, .Counter-mins div span, .Counter-secs div span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    background-color: rgb(240, 169, 56);
+  }
+  
+  .Product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+    width: 250px;
+    height: 350px;
+    background-color: rgb(238, 236, 236);
+    border-radius: 10px;
+    margin: 5px 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .Product .Porcent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 90%;
+    left: 10px;
+    right: 10px;
+    top: 10px;
+    color: #fff;
+    padding: 5px 5px;
+    font-size: 12px;
+  }
+  
+  .Product .Porcent .span {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    background-color: rgb(240, 169, 56);
+    padding: 0 8px;
+    border-radius: 10px;
+  }
+  
+  .No-show {
+    display: none;
+  }
+  
+  .Product-image {
+    position: relative;
+  }
+  
+  .Product-image img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .Title-description h3 {
+    color: rgb(3, 3, 3);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .Title-description p {
+    color: rgb(3, 3, 3);
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  
+  .Price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 17px;
+    padding: 0 20px;
+  }
+  
+  .Price-hot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 17px;
+    padding: 0 20px;
+  }
+  
+  .Price span {
+    color: rgb(3, 3, 3);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .Price-hot span {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .Price .Price-cart {
+    color: rgb(0, 0, 0);
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-decoration: line-through;
+  }
+  
+  .Price .Price-cart-promo {
+    color: rgb(74, 153, 74);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
 
 
 /**********************************/
@@ -807,6 +1180,200 @@ div#sdk h2 {
         align-items: center;
     }
 }
+
+
+/* FLASH SALES  */
+
+
+
+.Flash-sales {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 50px;
+    padding: 10px;
+  }
+  
+  .Products-show-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 40px 0;
+  }
+  
+  .flash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid rgb(240, 169, 56);
+    border-radius: 20px;
+  }
+  
+  .Product-section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+  
+  .Product-section-title h2 {
+    color: rgb(3, 3, 3);
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 0 5px;
+  }
+  
+  
+  .Container-products {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+  }
+  
+  .Counter-container {
+    width: 55%;
+    margin-top: 20px;
+  }
+  
+  .Counter-days, .Counter-hours, .Counter-mins, .Counter-secs {
+    width: 50%;
+    height: 50%;
+  }
+  
+  .Counter-days div span, .Counter-hours div span, .Counter-mins div span, .Counter-secs div span {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .Product {
+    width: 195px;
+    height: 270px;
+    background-color: rgb(238, 236, 236);
+    border-radius: 10px;
+    margin: 5px 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .Product .Porcent {
+    padding: 3px 3px;
+  }
+  
+  .Product .Porcent .span {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    background-color: rgb(240, 169, 56);
+    padding: 0 8px;
+    border-radius: 10px;
+  }
+  
+  .Product .Porcent .span-fire {
+    right: -10px;
+  }
+  
+  .Product .Porcent .span-fire svg {
+    width: 20px;
+    height: 20px;
+    color: rgb(243, 4, 4);
+  }
+
+  .Button-container-pay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-top: 0;
+    padding: 0;
+    margin-bottom: 10px;
+    padding-left: 10px;
+  }
+
+  .Show-price {
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .Button-Price:hover {
+    color: #fff;
+    background: #414040;
+    border: none;
+  }
+
+  
+  .No-show {
+    display: none;
+  }
+  
+  .Product-image {
+    position: relative;
+  }
+
+  .Letter {
+    color: rgb(240, 169, 56);
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 5px;
+  }
+  
+  .Product-image img {
+    width: 70%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .Title-description h3 {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  
+  .Title-description p {
+    font-size: 9px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  
+  .Price {
+    width: 100%;
+  }
+  
+  .Price-hot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 17px;
+    padding: 0 20px;
+  }
+  
+  .Price span {
+    font-size: 8px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .Price-hot span {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .Price .Price-cart {
+    font-size: 11px;
+  }
+  
+  .Price .Price-cart-promo {
+    font-size: 20px;
+  }
 
 
 /*******************************/
