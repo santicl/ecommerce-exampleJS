@@ -1255,8 +1255,8 @@ div#sdk h2 {
   }
   
   .Product {
-    width: 195px;
-    height: 270px;
+    width: 170px;
+    height: 240px;
     background-color: rgb(238, 236, 236);
     border-radius: 10px;
     margin: 5px 10px;
@@ -1298,7 +1298,7 @@ div#sdk h2 {
   }
 
   .Show-price {
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 700;
   }
 
@@ -1325,24 +1325,25 @@ div#sdk h2 {
   }
   
   .Product-image img {
-    width: 70%;
+    width: 75%;
     height: auto;
     border-radius: 10px;
   }
   
   .Title-description h3 {
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 700;
   }
   
   .Title-description p {
     font-size: 9px;
     font-weight: 400;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
   
   .Price {
     width: 100%;
+    margin-top: 0;
   }
   
   .Price-hot {
@@ -1372,7 +1373,7 @@ div#sdk h2 {
   }
   
   .Price .Price-cart-promo {
-    font-size: 20px;
+    font-size: 15px;
   }
 
 
