@@ -8,7 +8,9 @@ export const showCarts = (tour, newPrice) => {
     </div>
     <h4>$ ${newPrice}</h4>
     <div id="${tour.id}-${tour.title}">
-    <a href='https://api.whatsapp.com/send?phone=573162421339&text=Hola%20TourOpen%20%F0%9F%98%84%F0%9F%98%84%3B%20estoy%20interesado%20en%20el%20tour%20${tour.title}' class="button-add">Cotizar</a>
+    <button class="button-add">
+    <a href='https://api.whatsapp.com/send?phone=573162421339&text=Hola%20TourOpen%20%F0%9F%98%84%F0%9F%98%84%3B%20estoy%20interesado%20en%20el%20tour%20${tour.title}'>Cotizar</a>
+    </button>
     </div>
 </div>`;
 }
