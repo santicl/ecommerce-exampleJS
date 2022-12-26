@@ -110,6 +110,11 @@ button {
     color: white;
 }
 
+.product-container .button-add a:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
 .button-remove {
     width: 100px;
     margin-right: 5px;
