@@ -1538,6 +1538,27 @@ div#sdk h2 {
     background: #719a0a;
 }
 
+.free-section {
+    background: rgb(255, 196, 119);
+}
+
+.free-section-title h2 {
+    color: rgb(71, 71, 71);
+}
+
+.free-section-p p {
+    color: rgb(97, 97, 97);
+}
+
+.feature-text_items_item p {
+    color: rgb(97, 97, 97);
+}
+
+.feature-text_items_item h3 {
+    font-weight: bold;
+    color: rgb(71, 71, 71);
+}
+
 #page_pay {
     position: relative;
     margin-bottom: 45px;
