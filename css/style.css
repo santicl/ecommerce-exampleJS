@@ -1481,6 +1481,63 @@ div#sdk h2 {
     background-size: cover;
 }
 
+.page-minicurso {
+    position: relative;
+    margin-bottom: 45px;
+    padding: 150px 0 90px 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/minicurso-de-buceo-en-baru-2023.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-luna {
+    position: relative;
+    margin-bottom: 45px;
+    padding: 150px 0 90px 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/luna-de-miel-en-cartagena.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-bernardo {
+    position: relative;
+    margin-bottom: 45px;
+    padding: 150px 0 90px 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/isla-san-bernardo-2023.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-rosario {
+    position: relative;
+    margin-bottom: 45px;
+    padding: 150px 0 90px 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/rosario-island-2023-en-cartagena.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.container-btn .cotiza {
+    background: #719a0a;
+}
+
 #page_pay {
     position: relative;
     margin-bottom: 45px;
