@@ -93,12 +93,16 @@ button {
     width: 100px;
     margin-right: 5px;
     background-color: white;
-    color: black;
+    color: #4CAF50;
     border: 2px solid #4CAF50; /* Green */
     transition-duration: 0.4s;
     position: absolute;
     right: 15px;
     bottom: 10px;
+}
+
+.product-container .button-add a {
+    color: #4CAF50;
 }
   
 .button-add:hover {
