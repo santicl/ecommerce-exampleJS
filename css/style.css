@@ -1539,11 +1539,12 @@ div#sdk h2 {
 }
 
 .free-section {
-    background: rgb(255, 196, 119);
+    background: rgb(252, 212, 160);
 }
 
 .free-section-title h2 {
     color: rgb(71, 71, 71);
+    font-weight: bold;
 }
 
 .free-section-p p {
