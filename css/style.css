@@ -542,9 +542,9 @@ i.fi.fi-rr-user {
     text-align: center;
     margin-top: 50px;
     padding: 20px;
-    border: 1px solid rgb(218, 214, 214);
+    border: 1px solid rgb(240, 169, 56);
     border-radius: 20px;
-  }
+}
   
   .Product-section-title {
     display: flex;
@@ -556,11 +556,14 @@ i.fi.fi-rr-user {
   }
   
   .Product-section-title h2 {
-    color: rgb(3, 3, 3);
-    font-size: 25px;
+    background: rgb(240, 169, 56);
+    color: white;
+    font-size: 20px;
     font-weight: 700;
     margin: 0 0 0 5px;
-  }
+    border-radius: 15px;
+    padding: 10px;
+}
 
 .Container-products {
     display: grid;
@@ -1215,7 +1218,7 @@ div#sdk h2 {
     padding: 20px;
     border: 1px solid rgb(240, 169, 56);
     border-radius: 20px;
-  }
+}
   
   .Product-section-title {
     display: flex;
@@ -1227,7 +1230,7 @@ div#sdk h2 {
   }
   
   .Product-section-title h2 {
-    color: rgb(3, 3, 3);
+    color: white;
     font-size: 20px;
     font-weight: 700;
     margin: 0 0 0 5px;
@@ -1257,7 +1260,7 @@ div#sdk h2 {
   .Product {
     width: 170px;
     height: 240px;
-    background-color: rgb(238, 236, 236);
+    background-color: rgb(231, 229, 229);
     border-radius: 10px;
     margin: 5px 10px;
     transition: all 0.3s ease;
@@ -1540,6 +1543,10 @@ div#sdk h2 {
 
 .free-section {
     background: rgb(252, 212, 160);
+}
+
+.free-section-offert {
+    background: rgb(241, 241, 241);
 }
 
 .free-section-title h2 {
