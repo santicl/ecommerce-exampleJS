@@ -401,6 +401,7 @@ i.fi.fi-rr-user {
     border: 1px solid rgb(216, 214, 214);
     box-shadow: 0 0 10px rgba(235, 230, 230);
     border-radius: 8px;
+    margin-bottom: 20px;
   }
   
   .new-feature span {
