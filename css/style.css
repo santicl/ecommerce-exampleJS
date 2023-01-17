@@ -369,7 +369,7 @@ i.fi.fi-rr-user {
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 70px;
+    width: 90px;
     height: 32px;
     padding: 8px;
     background-color: #050505;
@@ -386,6 +386,35 @@ i.fi.fi-rr-user {
   
   .island-cant .island {
     margin-left: 8px;
+  }
+
+
+  .new-feature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90px;
+    height: 32px;
+    padding: 8px;
+    background-color: #050505;
+    border: 1px solid rgb(216, 214, 214);
+    box-shadow: 0 0 10px rgba(235, 230, 230);
+    border-radius: 8px;
+  }
+  
+  .new-feature span {
+    color: rgb(240, 232, 232);
+    font-size: 15px;
+    font-weight: 700;
+  }
+  
+  .new-feature .feature {
+    margin-left: 8px;
+  }
+
+  img.img-text {
+    width: 70px;
   }
   
   .island-item {
