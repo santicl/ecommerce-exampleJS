@@ -2007,6 +2007,21 @@ div#sdk h2 {
     background: rgba(0, 0, 0, .04);
 }
 
+.new-f {
+    background: white;
+}
+
+.new-f h2 {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.yourpack-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .booking .booking-content {
     padding: 45px 0 15px 0;
 }
