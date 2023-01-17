@@ -402,6 +402,20 @@ i.fi.fi-rr-user {
     box-shadow: 0 0 10px rgba(235, 230, 230);
     border-radius: 8px;
     margin-bottom: 20px;
+    animation: spinner 2s linear infinite;
+  }
+
+  @keyframes spinner {
+    0% {
+      box-shadow: 1px 3px 1px rgb(170, 168, 38);
+    }
+    50% {
+      box-shadow: 1px 3px 1px rgb(26, 127, 131);
+    }
+  
+    100% {
+      box-shadow: 1px 3px 1px rgb(214, 186, 60);
+    }
   }
   
   .new-feature span {
