@@ -2011,6 +2011,12 @@ div#sdk h2 {
     background: white;
 }
 
+.feature-border {
+    border-radius: 20px;
+    border: 1px solid #d49a3b;
+}
+
+
 .new-f h2 {
     font-size: 35px;
     font-weight: bold;
